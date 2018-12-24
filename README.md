@@ -1,3 +1,3 @@
 # home-assistant-config
 
-My Home Assitant Screenshots:
+Here is my Home Assitant Screenshots:
