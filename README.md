@@ -2,9 +2,6 @@
 
 Here is my Home Assitant Screenshots:
 
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://github.com/tomerbs/home-assistant-config/tree/master/Screenshots"><img src="https://github.com/tomerbs/home-assistant-config/blob/master/Screenshots/Home.PNG" style="max-width:100%;"></a></td>
-</tr></tbody></table>
+
+<img src="https://github.com/tomerbs/home-assistant-config/blob/master/Screenshots/Home.PNG" style="max-width:100%;">
+<img src="https://github.com/tomerbs/home-assistant-config/blob/master/Screenshots/Media_Watch_TV.PNG" style="max-width:100%;">
