@@ -1,0 +1,16 @@
+  - platform: mqtt
+    name: "Outdoor Speakers"
+    command_topic: "cmnd/Outdoor_Speakers/power"
+    state_topic: "stat/Outdoor_Speakers/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: broadlink
+    host: 10.0.0.37
+    mac: 34:EA:34:D0:A9:4E
+    
+  - platform: broadlink
+    host: 10.0.0.36
+    mac: 34:EA:34:CE:0A:C3

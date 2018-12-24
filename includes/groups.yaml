@@ -1,0 +1,471 @@
+
+  default_view:
+    view: yes
+    icon: mdi:home 
+    entities:
+      - group.weather
+      - group.livingroom
+      - group.kitchen
+      - group.masterbedroom
+      - group.lian
+      - group.orin
+      - group.porch
+      - group.xiaomivaccumcleaner
+      - group.people
+      - group.bathroom
+      - group.laundryroom
+      - group.diningroom
+      - group.warehouse
+      - group.battery_level
+      - group.airconditioner
+
+###   TABS =YES   ###
+      
+  living_room:
+    name: Living Room
+    view: yes
+    icon: mdi:sofa
+    entities:
+      - group.custom_tiles_activities_remote
+      - group.custom_tiles_satalite_remote
+      - group.custom_tiles_streamer
+      - group.livingroom
+      - media_player.living_room_kodi
+
+  music:
+    name: Music
+    view: yes
+    icon: mdi:music
+    entities:
+      - group.music_all
+
+  alarm_clock:
+    name: Alarm Clock
+    view: yes
+    icon: mdi:timer
+    entities:
+      - group.alarmclock
+      
+  automations_tab:
+    name: Automations
+    view: yes
+    icon: mdi:home-automation
+    entities:
+      - group.automation
+      - group.scripts
+      - group.firmware
+      
+  settings_tab:
+    name: Settings
+    view: yes
+    icon: mdi:settings
+    entities:
+      - group.hastatus
+      - group.gateway
+      - group.map
+
+  weather:
+    name: Weather
+    view: yes
+    icon: mdi:weather-partlycloudy
+    entities:
+      - group.weather_forcast
+      
+###   TABS =NO   ###
+
+  weather_forcast:
+    name: Weather
+    entities:
+      - input_boolean.weather
+
+  custom_tiles_activities_remote:
+    name: Activities
+    entities:
+      - input_text.dummy_tiles_master_remote
+      - input_select.living_room_tv
+      - sensor.current_activity
+
+  custom_tiles_satalite_remote:
+    name: Satalite
+    entities:
+      - input_text.dummy_tiles_yes_remote
+      
+  custom_tiles_streamer:
+    name: Kodi
+    entities:
+      - input_text.dummy_tiles_streamer_remote
+      
+  livingroom:
+    name: Living Room
+    view: no
+    control: hidden
+    entities:
+      - sensor.home_temperature
+      - sensor.home_humidity
+      - light.living_room
+      - light.gateway_light_7811dcb24e70
+      - light.bar_lights
+      - light.tv_backlight
+      - light.sonoff_test1
+      - light.hallway
+      - climate.air_condition
+      
+  kitchen:
+    name: Kitchen
+    view: no
+    control: hidden
+    entities:
+      - light.kitchen_stove
+      - light.sonoff_test2
+      - light.cabinet
+      
+  masterbedroom:
+    name: Master Bedroom
+    view: no
+    control: hidden
+    entities:
+      - light.master_bedroom_light
+      - fan.mbedroom_fan
+      - light.natali_bed_light
+      - light.tomer_bed_light
+      
+  lian:
+    name: Lian's Room
+    view: no
+    control: hidden
+    entities:
+      - light.lians_room_fan_light
+      - fan.lians_ceiling_fan
+      - light.lians_yeelight_rgb_light
+      
+  orin:
+    name: Orin's Room
+    view: no
+    control: hidden
+    entities:
+      - light.orins_room_light
+      - light.orins_room_fan
+      - light.gateway_light_34ce00fb6e68
+      
+  hastatus:
+    name: HA Status
+    view: no
+    control: hidden
+    entities:
+      - sun.sun
+      - sensor.cpu_temp
+      - sensor.cpu_used
+      - sensor.speedtest_ping
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
+      - sensor.dark_sky_template
+      - sensor.last_boot
+      - sensor.custom_tiles_card_latest_version
+      - script.all_lights_on
+      - script.all_lights_off
+      - sensor.since_last_boot_templated
+      - zwave.aeotec_zw090_zstick_gen5_eu
+      
+  bathroom:
+    name: Bathroom
+    view: no
+    control: hidden
+    entities:
+      - sensor.bathroom_temperature
+      - sensor.bathroom_humidity
+      - light.bethroom_light
+      - light.bethroom_mirror_light
+      
+  laundryroom:
+    name: Laundry Room
+    view: no
+    control: hidden
+    entities:
+      - sensor.laundry_room_temperature
+      - sensor.laundry_room_humidity
+      - light.laundry_room
+
+  porch:
+    name: Porch
+    view: no
+    control: hidden
+    entities:
+      - light.front_porch
+      - light.bbq
+      - light.front_yard
+      - switch.outdoor_speakers
+      
+  xiaomivaccumcleaner:
+    name: Xiaomi Vaccum Cleaner
+    view: no
+    control: hidden
+    entities:
+      - vacuum.xiaomi_vacuum_cleaner
+      - input_select.vacuum_room
+      - sensor.vacuum_cleaner_battery
+      - sensor.vacuum_status
+      
+  map:
+    name: Locations
+    view: no
+    entities:
+      - camera.locations
+      
+  music_all:
+    name: Google Home
+    view: no
+    control: hidden
+    entities:
+      - media_player.all_speakers
+      - input_number.google_home_all_speakers
+      - input_select.radio_station
+      - input_select.radio_speakers
+      - input_number.radio_volume
+      - input_boolean.radio_play
+      
+  Residence Radio:
+    name: Residentie Radio
+    entities:
+    - input_select.radio_station
+    - input_select.chromecast_radio
+    - script.radio538
+      
+  warehouse:
+    name: Warehouse
+    view: no
+    entities:
+      - sensor.neo_coolcam_water_leakage_sensor
+      - zwave.neo_coolcam_water_leakage_detector_battery
+
+  battery_level:
+    name: Battery Level
+    view: no
+    entities:
+      
+  automation:
+    name: Automation
+    view: no
+    entities:
+      - automation.automation_day_mode_theme
+      - automation.automation_night_mode_theme
+      - automation.cabinet_light_off
+      - automation.cabinet_light_on
+      - automation.enter_home
+      - automation.good_night
+      - automation.ha_update_available_notification
+      - automation.hass_harmony_listen_to_music
+      - automation.hass_harmony_movie_time
+      - automation.hass_harmony_playstation_4
+      - automation.hass_harmony_poweroff
+      - automation.hass_harmony_watch_tv
+      - automation.home_assistant_has_started
+      - automation.home_assistant_restarted
+      - automation.lian_room_light_t1_switch_off
+      - automation.lian_room_light_t1_switch_on
+      - automation.lians_room_fan
+      - automation.refresh_owntracks_natali
+      - automation.refresh_owntracks_tomer
+      - automation.remote_harmony_listen_to_music
+      - automation.remote_harmony_movie_time
+      - automation.remote_harmony_playstation_4
+      - automation.remote_harmony_poweroff
+      - automation.remote_harmony_watch_tv
+      - automation.sonoff_firmware_update_available_notification
+      - automation.wake_me_up__all_week_days
+      - automation.wake_me_up__working_days
+      - automation.warehouse_flood_alert_email
+      - automation.warehouse_flood_alert_ifttt
+      - automation.xiaomi_brighten_off
+      - automation.xiaomi_brighten_on
+      - automation.xiaomi_dim_off
+      - automation.xiaomi_dim_on
+      - automation.xiaomi_vacuum_clean_bathroom
+      - automation.xiaomi_vacuum_clean_dining_room
+      - automation.xiaomi_vacuum_clean_hallway
+      - automation.xiaomi_vacuum_clean_kitchen
+      - automation.xiaomi_vacuum_clean_lians_room
+      - automation.xiaomi_vacuum_clean_living_room
+      - automation.xiaomi_vacuum_clean_mbedroom
+      - automation.xiaomi_vacuum_clean_office
+      - automation.xiaomi_vacuum_clean_orins_room
+
+  scripts:
+    name: Scripts
+    view: no
+    control: hidden
+    entities:
+      - script.all_lights_off
+      - script.all_lights_on
+      - script.good_night
+      - script.harmony_command_blue
+      - script.harmony_command_channel_down
+      - script.harmony_command_channel_down_streamer
+      - script.harmony_command_channel_up
+      - script.harmony_command_channel_up_streamer
+      - script.harmony_command_direction_down
+      - script.harmony_command_direction_down_streamer
+      - script.harmony_command_direction_left
+      - script.harmony_command_direction_left_streamer
+      - script.harmony_command_direction_right
+      - script.harmony_command_direction_right_streamer
+      - script.harmony_command_direction_up
+      - script.harmony_command_direction_up_streamer
+      - script.harmony_command_exit
+      - script.harmony_command_exit_streamer
+      - script.harmony_command_forward
+      - script.harmony_command_forward_streamer
+      - script.harmony_command_green
+      - script.harmony_command_info
+      - script.harmony_command_menu
+      - script.harmony_command_menu_streamer
+      - script.harmony_command_mute
+      - script.harmony_command_play_pause
+      - script.harmony_command_play_pause_streamer
+      - script.harmony_command_red
+      - script.harmony_command_rewind
+      - script.harmony_command_rewind_streamer
+      - script.harmony_command_select
+      - script.harmony_command_select_streamer
+      - script.harmony_command_stop
+      - script.harmony_command_tv_channel_11
+      - script.harmony_command_tv_channel_12
+      - script.harmony_command_tv_channel_13
+      - script.harmony_command_tv_channel_24
+      - script.harmony_command_tv_channel_27
+      - script.harmony_command_tv_channel_28
+      - script.harmony_command_tv_channel_31
+      - script.harmony_command_tv_channel_32
+      - script.harmony_command_tv_channel_40
+      - script.harmony_command_tv_channel_42
+      - script.harmony_command_tv_channel_55
+      - script.harmony_command_tv_channel_70
+      - script.harmony_command_tv_channel_81
+      - script.harmony_command_tv_channel_82
+      - script.harmony_command_tv_channel_84
+      - script.harmony_command_tv_channel_85
+      - script.harmony_command_volume_down
+      - script.harmony_command_volume_down_streamer
+      - script.harmony_command_volume_up
+      - script.harmony_command_volume_up_streamer
+      - script.harmony_command_yellow
+      - script.master_bedroom_fan_light
+      - script.master_bedroom_tv_off
+      - script.master_bedroom_watch_tv
+      - script.outdoor
+      - script.run_harmony_listen_to_music_activity
+      - script.run_harmony_movie_time_activity
+      - script.run_harmony_playstation4_activity
+      - script.run_harmony_poweroff_activity
+      - script.run_harmony_watch_tv_activity
+      - script.vacuum_bathroom
+      - script.vacuum_dining_room
+      - script.vacuum_hallway
+      - script.vacuum_kitchen
+      - script.vacuum_lians_room
+      - script.vacuum_living_room
+      - script.vacuum_m_bedroom
+      - script.vacuum_office
+      - script.vacuum_orins_room
+
+
+  gateway:
+    view: no
+    control: hidden
+    entities: 
+    - binary_sensor.door_window_sensor_158d0001a1f88b
+    - binary_sensor.door_window_sensor_158d0001a1f88b_battery
+    - binary_sensor.door_window_sensor_158d00016cf3b7
+    - binary_sensor.door_window_sensor_158d00016cf3b7_battery
+    - light.gateway_light_34ce00fb6e68
+    - light.gateway_light_7811dcb24e70
+    - light.lians_yeelight_rgb_light
+    - binary_sensor.switch_158d0001f9f305
+    - binary_sensor.switch_158d0001f9f305_battery
+    - binary_sensor.motion_sensor_158d0001a1f1ff
+    - binary_sensor.motion_sensor_158d0001a1f1ff_battery
+
+  device_tracker:
+    - sensor.tomer_location
+    - sensor.natali_location
+    
+  alarmclock:
+    name: Wake Me Up
+    view: no
+    control: hidden
+    entities: 
+      - automation.wake_me_up
+      - sensor.alarm_time
+      - input_number.alarmhour
+      - input_number.alarmminutes
+      - input_boolean.alarmweekday
+
+  broadlink_remote:
+    name: Remotes
+    view: no
+    control: hidden
+    entities: 
+      - switch.back
+      - switch.mute
+
+  all_lights:
+    name: All Lights
+    view: no
+    control: hidden
+    entities: 
+      - light.bar_lights
+      - light.bbq
+      - light.bethroom_light
+      - light.bethroom_mirror_light
+      - light.cabinet
+      - light.dining_room
+      - light.front_porch
+      - light.front_yard
+      - light.gateway_light_34ce00fb6e68
+      - light.gateway_light_7811dcb24e70
+      - light.hallway
+      - light.kitchen_sink
+      - light.kitchen_stove
+      - light.laundry_room
+      - light.lian_bed_light
+      - light.lians_room_fan
+      - light.lians_room_light
+      - light.lians_yeelight_rgb_light
+      - light.living_room
+      - light.master_bedroom_fan
+      - light.master_bedroom_light
+      - light.natali_bed_light
+      - light.orin_bed_light
+      - light.orins_room_fan
+      - light.orins_room_light
+      - light.tomer_bed_light
+      - light.tv_backlight
+      
+  robot_vacuum:
+    control: hidden
+    entities:
+      - vacuum.xiaomi_vacuum_cleaner
+      - input_boolean.disable_daily_vacuum
+  vacuum_a_room:
+    control: hidden
+    entities:
+      - input_select.vacuum_room
+      - sensor.vacuum_room
+  fix_watch_tv:
+    name: Fix Watch TV
+    view: no
+    control: hidden
+    entities:
+      - script.power_on_yes
+      - script.power_on_tv
+      - script.power_on_receiver
+      - script.tv_input_video7
+      - script.receiver_input_cd
+  fix_watch_a_movie:
+    name: Fix Watch a Movie
+    view: no
+    control: hidden
+    entities:
+      - script.power_on_tv
+      - script.power_on_receiver
+      - script.tv_input_video5
+      - script.receiver_input_cdr

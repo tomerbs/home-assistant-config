@@ -1,0 +1,728 @@
+all_lights_on:
+  alias: All Lights On
+  sequence:
+  - service: light.turn_on
+    entity_id: group.all_lights
+  - delay: 00:00:01
+all_lights_off:
+  alias: All Lights Off
+  sequence:
+  - service: light.turn_off
+    entity_id: group.all_lights
+  - delay: 00:00:01
+run_harmony_poweroff_activity:
+  alias: Run Harmony PowerOff Activity
+  sequence:
+  - data:
+      entity_id: input_boolean.remote_livingroom_harmony_poweroff
+    service: input_boolean.turn_on
+run_harmony_watch_tv_activity:
+  alias: Run Harmony Watch TV Activity
+  sequence:
+  - data:
+      entity_id: input_boolean.remote_livingroom_harmony_watch_tv
+    service: input_boolean.turn_on
+run_harmony_movie_time_activity:
+  alias: Run Harmony Movie Time Activity
+  sequence:
+  - data:
+      entity_id: input_boolean.remote_livingroom_harmony_movie_time
+    service: input_boolean.turn_on
+run_harmony_listen_to_music_activity:
+  alias: Run Harmony Listen to Music Activity
+  sequence:
+  - data:
+      entity_id: input_boolean.remote_livingroom_harmony_listen_to_music
+    service: input_boolean.turn_on
+run_harmony_playstation4_activity:
+  alias: Run Harmony Playstation 4 Activity
+  sequence:
+  - data:
+      entity_id: input_boolean.remote_livingroom_harmony_playstation4
+    service: input_boolean.turn_on
+harmony_command_volume_up:
+  sequence:
+  - data:
+      command: VolumeUp
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Volume Up
+harmony_command_play_pause:
+  sequence:
+  - data:
+      command: Pause
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Play Pause
+harmony_command_menu:
+  sequence:
+  - data:
+      command: Menu
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Menu
+harmony_command_direction_up:
+  sequence:
+  - data:
+      command: DirectionUp
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Direction Up
+harmony_command_info:
+  sequence:
+  - data:
+      command: Info
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Info
+harmony_command_channel_up:
+  sequence:
+  - data:
+      command: ChannelUp
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command ChannelUp
+harmony_command_rewind:
+  sequence:
+  - data:
+      command: Rewind
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Rewind
+harmony_command_direction_left:
+  sequence:
+  - data:
+      command: DirectionLeft
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command DirectionLeft
+harmony_command_select:
+  sequence:
+  - data:
+      command: Select
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Select
+harmony_command_direction_right:
+  sequence:
+  - data:
+      command: DirectionRight
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command DirectionRight
+harmony_command_forward:
+  sequence:
+  - data:
+      command: FastForward
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command FastForward
+harmony_command_volume_down:
+  sequence:
+  - data:
+      command: VolumeDown
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Volume Down
+harmony_command_exit:
+  sequence:
+  - data:
+      command: Exit
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Exit
+harmony_command_direction_down:
+  sequence:
+  - data:
+      command: DirectionDown
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command DirectionDown
+harmony_command_mute:
+  sequence:
+  - data:
+      command: Mute
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Mute
+harmony_command_channel_down:
+  sequence:
+  - data:
+      command: ChannelDown
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command ChannelDown
+harmony_command_green:
+  sequence:
+  - data:
+      command: Green
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Green
+harmony_command_red:
+  sequence:
+  - data:
+      command: Red
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Red
+harmony_command_blue:
+  sequence:
+  - data:
+      command: Blue
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Blue
+harmony_command_yellow:
+  sequence:
+  - data:
+      command: Yellow
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Yellow
+harmony_command_stop:
+  sequence:
+  - data:
+      command: Stop
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Stop
+harmony_command_tv_channel_12:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '1'
+      - '2'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 12
+harmony_command_tv_channel_13:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '1'
+      - '3'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 13
+harmony_command_tv_channel_11:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '1'
+      - '1'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 11
+harmony_command_tv_channel_40:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '4'
+      - '0'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 40
+harmony_command_tv_channel_32:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '3'
+      - '2'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 32
+harmony_command_tv_channel_31:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '3'
+      - '1'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 31
+harmony_command_tv_channel_27:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '2'
+      - '7'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 27
+harmony_command_tv_channel_42:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '4'
+      - '2'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 42
+harmony_command_tv_channel_28:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '2'
+      - '8'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 28
+harmony_command_tv_channel_24:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '2'
+      - '4'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 24
+harmony_command_tv_channel_55:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '5'
+      - '5'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 55
+harmony_command_tv_channel_81:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '8'
+      - '1'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 81
+harmony_command_tv_channel_82:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '8'
+      - '2'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 82
+harmony_command_tv_channel_84:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '8'
+      - '4'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 84
+harmony_command_tv_channel_85:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '8'
+      - '5'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV Channel 85
+harmony_command_tv_channel_70:
+  sequence:
+  - data:
+      command:
+      - Return
+      - '0'
+      - '7'
+      - '0'
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command TV  Channel 70
+harmony_command_volume_up_streamer:
+  sequence:
+  - data:
+      command: VolumeUp
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Volume Up Streamer
+harmony_command_play_pause_streamer:
+  sequence:
+  - data:
+      command: OK
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Play Pause Streamer
+harmony_command_menu_streamer:
+  sequence:
+  - data:
+      command: Menu
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Menu Streamer
+harmony_command_direction_up_streamer:
+  sequence:
+  - data:
+      command: DirectionUp
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Direction Up Streamer
+harmony_command_channel_up_streamer:
+  sequence:
+  - data:
+      command: ChannelUp
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command ChannelUp Streamer
+harmony_command_rewind_streamer:
+  sequence:
+  - data:
+      command: SkipBack
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Rewind Streamer
+harmony_command_direction_left_streamer:
+  sequence:
+  - data:
+      command: DirectionLeft
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command DirectionLeft Streamer
+harmony_command_select_streamer:
+  sequence:
+  - data:
+      command: OK
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Select Streamer
+harmony_command_direction_right_streamer:
+  sequence:
+  - data:
+      command: DirectionRight
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command DirectionRight Streamer
+harmony_command_forward_streamer:
+  sequence:
+  - data:
+      command: SkipForward
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command FastForward Streamer
+harmony_command_volume_down_streamer:
+  sequence:
+  - data:
+      command: VolumeDown
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Volume Down Streamer
+harmony_command_exit_streamer:
+  sequence:
+  - data:
+      command: Exit
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Exit Streamer
+harmony_command_direction_down_streamer:
+  sequence:
+  - data:
+      command: DirectionDown
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command DirectionDown Streamer
+harmony_command_channel_down_streamer:
+  sequence:
+  - data:
+      command: ChannelDown
+      device: 59291302
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command ChannelDown Streamer 
+power_on_yes:
+  sequence:
+  - data:
+      command: PowerToggle
+      device: 57752523
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Power On Yes
+power_on_tv:
+  sequence:
+  - data:
+      command: PowerOn
+      device: 57752521
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Power On TV
+tv_input_video7:
+  sequence:
+  - data:
+      command: Input7
+      device: 57752521
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Tv Input Video7
+tv_input_video5:
+  sequence:
+  - data:
+      command: Input5
+      device: 57752521
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Tv Input Video5
+power_on_receiver:
+  sequence:
+  - data:
+      command: PowerOn
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Power On Receiver
+receiver_input_cd:
+  sequence:
+  - data:
+      command: InputCd
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Receiver InputCD
+receiver_input_cdr:
+  sequence:
+  - data:
+      command: InputCD-R
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Receiver InputCDR
+master_bedroom_fan_light:
+  alias: Master Bedroom Light
+  sequence:
+  - data:
+      packet:
+      - sgCeAQqTCxwLHQodHgkeCR8JCh0LHQodHgoeCR4JCx0KHR4JCx0LHAsdCx0eCQsdCh4KHQsdCx0KHgodHgoeCR4KHgoeCh4KCh4eCR8KHgkfCQsdHwkKlAodCh0KHR4KHgkeCQodCx0KHR4KHgkeCgodCh4dCgoeCh0LHQodHgoKHQsdCh4KHQsdCx0KHR8JHgkfCR4KHgoeCgoeHgoeCh4KHgoKHh4JCpQKHQodCxwfCR4JHgkKHgodCh4dCh4JHgoKHQoeHQoKHQsdCh0LHR4JCx0LHQodCx0KHgodCx0eCh4KHgkeCh4KHgoKHh4KHgoeCR8JCx4eCQuTCh0KHQsdHQodCh4JCxwLHQodHgoeCR4JCx0KHR4KCh0LHQoeCh0eCgodCx0KHQsdCx0KHQsdHgoeCR8JHgkeCh4KCx0fCR4KHwkeCgsdHwkKkwsdCh0KHR4JHgoeCQodCh4KHR4KHQoeCQodCx0eCgodCh4KHQsdHgkLHQodCx0LHQoeCh0LHR4KHgkeCh4JHgofCQseHgkfCR8JHgoLHR4KBAAF3AAAAAAAAAAAAAA=
+    service: switch.broadlink_send_packet_10_0_0_37
+outdoor:
+  alias: outdoor
+  sequence:
+  - alias: ''
+    data:
+      entity_id: switch.outdoor_speakers
+    service: switch.toggle
+good_night:
+  alias: Good Night
+  sequence:
+  - data:
+      entity_id: script.run_harmony_poweroff_activity
+    service: script.turn_on
+  - data:
+      entity_id: group.all_lights
+    service: light.turn_off
+  - data:
+      entity_id: switch.outdoor_speakers
+    service: switch.turn_off
+  - data:
+      entity_id: script.master_bedroom_tv_off
+    service: script.turn_on
+  - data:
+      entity_id: light.yeelight_rgb_7811dc6835d2, light.gateway_light_34ce00fb6e68
+    service: light.turn_on
+master_bedroom_tv_off:
+  alias: Master Bedroom TV Off
+  sequence:
+  - data:
+      packet:
+      - JgBQAAABJ5QQFRISEhMRFBAUEhMSNxEUEDoROBI3ETgROBA5ERQSNxI4ETQWNxI3EDkSNxE5EBQSExEUEBQRFBEUERQQFBM2EQAFKQABJkoRAA0FAAAAAAAAAAA=
+    service: switch.broadlink_send_packet_10_0_0_37
+master_bedroom_watch_tv:
+  alias: Master bedroom Watch TV
+  sequence:
+  - data:
+      packet:
+      - JgBQAAABJ5QSExITEhMSExITEhMSNxMSEzcTNxI4EjgSNxM3ExITNxMSEjgSExITEjgSExISExITNxMSEzcSOBITEjgSNxM3EwAFMQABKEoSAA0FAAAAAAAAAAA=
+    service: switch.broadlink_send_packet_10_0_0_37
+vacuum_m_bedroom:
+  alias: Vacuum Master Bedroom
+  sequence:
+  - service: vacuum.send_command
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      command: app_zoned_clean
+      params: [[22251,24582,26151,28182,1]]
+vacuum_lians_room:
+  alias: Vacuum Lians Bedroom
+  sequence:
+  - service: vacuum.send_command
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      command: app_zoned_clean
+      params: [[18869,25540,22219,28140,1]]
+vacuum_orins_room:
+  alias: Vacuum Orins Bedroom
+  sequence:
+  - service: vacuum.send_command
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      command: app_zoned_clean
+      params: [[22222,21735,26122,24635,1]]
+vacuum_dining_room:
+  alias: Vacuum Dining Room
+  sequence:
+  - service: vacuum.send_command
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      command: app_zoned_clean
+      params: [[11355,28040,14805,30190,1]]
+vacuum_hallway:
+  alias: Vacuum Hallway
+  sequence:
+  - service: vacuum.send_command
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      command: app_zoned_clean
+      params: [[17276,24207,22076,25557,1]]
+vacuum_kitchen:
+  alias: Vacuum Kitchen
+  sequence:
+  - service: vacuum.send_command
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      command: app_zoned_clean
+      params: [[11284,24690,13684,27740,1],[13627,24722,17727,26522,1]]
+vacuum_living_room:
+  alias: Vacuum Living Room
+  sequence:
+  - service: vacuum.send_command
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      command: app_zoned_clean
+      params: [[13706,26530,18856,30230,1]]
+vacuum_bathroom:
+  alias: Vacuum Main Bathroom
+  sequence:
+  - service: vacuum.send_command
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      command: app_zoned_clean
+      params: [[15806,21669,19306,24169,1]]
+vacuum_office:
+  alias: VacuumOffice
+  sequence:
+  - service: vacuum.send_command
+    data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      command: app_zoned_clean
+      params: [[19893,21859,22293,24209,1]]
+
+radio538:
+  alias: Play Radio on Chromecast Audio
+  sequence:
+    - delay:
+        seconds: 1
+    -  service: media_player.volume_set
+       data_template:
+         entity_id: >
+          {% if is_state("input_select.radio_speakers", "Livingroom") %} media_player.tv_speaker
+          {% elif is_state("input_select.radio_speakers", "Kitchen") %} media_player.kitchen_speaker
+          {% elif is_state("input_select.radio_speakers", "M.Bedroom") %} media_player.master_bedroom
+          {% elif is_state("input_select.radio_speakers", "Office") %} media_player.office_speaker
+          {% elif is_state("input_select.radio_speakers", "Everywhere") %} media_player.all_speakers
+          {% endif %}
+         volume_level: '{{ states.input_number.radio_volume.state | float }}'
+    -  service: media_player.play_media
+       data_template:
+         entity_id: >
+          {% if is_state("input_select.radio_speakers", "Livingroom") %} media_player.tv_speaker
+          {% elif is_state("input_select.radio_speakers", "Kitchen") %} media_player.kitchen_speaker
+          {% elif is_state("input_select.radio_speakers", "M.Bedroom") %} media_player.master_bedroom
+          {% elif is_state("input_select.radio_speakers", "Office") %} media_player.office_speaker
+          {% elif is_state("input_select.radio_speakers", "Everywhere") %} media_player.all_speakers
+          {% endif %}        
+         media_content_id: >
+          {% if is_state("input_select.radio_station", "GalGalatz") %} http://player.gl.bynetcdn.com/Redirector/glz/glglz/ICE-live
+          {% elif is_state("input_select.radio_station", "Galatz") %} http://player.gl.bynetcdn.com/Redirector/glz/glz/ICE-live
+          {% elif is_state("input_select.radio_station", "Radius 100FM") %} http://100fm.streamgates.net/Radios100Fm
+          {% elif is_state("input_select.radio_station", "Echo 99FM") %} http://99.livecdn.biz/99fm_aac
+          {% elif is_state("input_select.radio_station", "Kan 88FM") %} http://radiocast-rr-d.vidnt.com/ipbc_IPBC88LAM
+          {% elif is_state("input_select.radio_station", "103FM") %} http://103fm.live.streamgates.net/103fm_live/1multix/icecast.audio
+          {% elif is_state("input_select.radio_station", "Lev Hamedina 91FM") %} http://gb92.multix-technologies.com/Lev91Fm
+          {% elif is_state("input_select.radio_station", "Reshet Gimel") %} http://radiocast-rr-d.vidnt.com/ipbc_IPBCgimmelLAM
+          {% elif is_state("input_select.radio_station", "Radio Darom") %} http://audio-darom.ecast.co.il:9000/darom97fm
+          {% elif is_state("input_select.radio_station", "Kol Hayam Haadom 102FM") %} http://eilat.cdnwz.net/102fm
+          {% endif %}
+         media_content_type: 'audio/mp4'   
+         
+      

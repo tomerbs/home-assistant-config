@@ -1,0 +1,124 @@
+#################################################################
+#                                                               #
+#                       Packages/Presence                       #
+#                                                               #
+#################################################################
+
+#################################################################
+#                                                               #
+#                           Group                               #
+#                                                               #
+################################################################# 
+      
+group:
+  people:
+    name: People
+    view: no
+    entities:
+      - sensor.tomer
+      - sensor.battery_tomer
+      - sensor.natali
+      - sensor.battery_natali
+
+#################################################################
+#                                                               #
+#                      Device Trackers                          #
+#                                                               #
+################################################################# 
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts:
+      - 10.0.0.40
+      - 10.0.0.44
+    home_interval: 10
+      
+  - platform: owntracks
+    max_gps_accuracy: 200
+    
+
+    
+
+#################################################################
+#                                                               #
+#                          Sensors                              #
+#                                                               #
+################################################################# 
+
+## Batteries
+sensor:
+  - platform: mqtt
+    state_topic: "owntracks/admin/samsung"
+    name: "Battery Tomer"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.batt }}'
+    device_class: battery
+    
+  - platform: mqtt
+    state_topic: "owntracks/admin/oneplus3t"
+    name: "Battery Natali"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.batt }}'
+    device_class: battery
+
+## Create Sensor for Display in UI   
+  - platform: template  
+    sensors:  
+      tomer:
+        friendly_name: "Tomer Location"
+        value_template: >-
+          {% if is_state('device_tracker.galaxys9', 'home') %}
+            Home
+          {% else %}
+            Away
+          {% endif %}
+        icon_template: >-
+          {% if is_state('sensor.tomer', 'Home') %}
+            mdi:home
+          {% else %}
+            mdi:walk
+          {% endif %}
+
+      natali:
+        friendly_name: "Natali Location"
+        value_template: >-
+          {% if is_state('device_tracker.oneplus3t', 'home') %}
+            Home
+          {% else %}
+            Away
+          {% endif %}
+        icon_template: >-
+          {% if is_state('sensor.tomer', 'Home') %}
+            mdi:home
+          {% else %}
+            mdi:walk
+          {% endif %}
+
+#################################################################
+#                                                               #
+#                         Automations                           #
+#                                                               #
+#################################################################
+
+automation:
+## Refresh Owntracks Tomer
+  - alias: Refresh Owntracks Tomer
+    trigger:
+      - platform: time
+        minutes: '/5'
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "owntracks/admin/samsung/cmd"
+          payload_template: '{"_type":"cmd","action":"reportLocation","batt":"%BATT"}'
+          
+## Refresh Owntracks Natali
+  - alias: Refresh Owntracks Natali
+    trigger:
+      - platform: time
+        minutes: '/5'
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "owntracks/admin/oneplus3t/cmd"
+          payload_template: '{"_type":"cmd","action":"reportLocation","batt":"%BATT"}'
