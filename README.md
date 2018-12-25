@@ -1,6 +1,6 @@
 # home-assistant-config
 
-Here is my Home Assitant Screenshots:
+Here is my Home Assistant Screenshots:
 
 
 <img src="https://github.com/tomerbs/home-assistant-config/blob/master/Screenshots/Home.PNG" style="max-width:100%;">
