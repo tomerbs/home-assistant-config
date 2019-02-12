@@ -1,0 +1,71 @@
+homeassistant:
+  customize:
+    script.radio538:
+      friendly_name: Start Playing
+      icon: mdi:play
+
+input_select:
+  radio_station:
+    name: 'Select Radio Station:'
+    options:
+      - GalGalatz
+      - Galatz
+      - Radius 100FM
+      - Echo 99FM
+      - Kan 88FM
+      - 103FM
+      - Lev Hamedina 91FM
+      - Reshet Gimel
+      - Radio Darom
+      - Kol Hayam Haadom 102FM
+    icon: mdi:radio 
+  
+  radio_speakers:
+    name: 'Select Speakers:'
+    options:
+      - Livingroom
+      - Kitchen
+      - M.Bedroom
+      - Office
+      - Everywhere
+    initial: Everywhere
+    icon: mdi:speaker-wireless
+
+script:
+  radio538:
+    alias: Play Radio on Chromecast Audio
+    sequence:
+      - delay:
+          seconds: 1
+      -  service: media_player.volume_set
+         data_template:
+           entity_id: >
+            {% if is_state("input_select.radio_speakers", "Livingroom") %} media_player.tv_speaker
+            {% elif is_state("input_select.radio_speakers", "Kitchen") %} media_player.kitchen_speaker
+            {% elif is_state("input_select.radio_speakers", "M.Bedroom") %} media_player.master_bedroom
+            {% elif is_state("input_select.radio_speakers", "Office") %} media_player.office_speaker
+            {% elif is_state("input_select.radio_speakers", "Everywhere") %} media_player.all_speakers_2
+            {% endif %}
+           volume_level: '{{ states.input_number.radio_volume.state | float }}'
+      -  service: media_player.play_media
+         data_template:
+           entity_id: >
+            {% if is_state("input_select.radio_speakers", "Livingroom") %} media_player.tv_speaker
+            {% elif is_state("input_select.radio_speakers", "Kitchen") %} media_player.kitchen_speaker
+            {% elif is_state("input_select.radio_speakers", "M.Bedroom") %} media_player.master_bedroom
+            {% elif is_state("input_select.radio_speakers", "Office") %} media_player.office_speaker
+            {% elif is_state("input_select.radio_speakers", "Everywhere") %} media_player.all_speakers_2
+            {% endif %}        
+           media_content_id: >
+            {% if is_state("input_select.radio_station", "GalGalatz") %} http://player.gl.bynetcdn.com/Redirector/glz/glglz/ICE-live
+            {% elif is_state("input_select.radio_station", "Galatz") %} http://player.gl.bynetcdn.com/Redirector/glz/glz/ICE-live
+            {% elif is_state("input_select.radio_station", "Radius 100FM") %} http://100fm.streamgates.net/Radios100Fm
+            {% elif is_state("input_select.radio_station", "Echo 99FM") %} http://99.livecdn.biz/99fm_aac
+            {% elif is_state("input_select.radio_station", "Kan 88FM") %} http://radiocast-rr-d.vidnt.com/ipbc_IPBC88LAM
+            {% elif is_state("input_select.radio_station", "103FM") %} http://103fm.live.streamgates.net/103fm_live/1multix/icecast.audio
+            {% elif is_state("input_select.radio_station", "Lev Hamedina 91FM") %} http://gb92.multix-technologies.com/Lev91Fm
+            {% elif is_state("input_select.radio_station", "Reshet Gimel") %} http://radiocast-rr-d.vidnt.com/ipbc_IPBCgimmelLAM
+            {% elif is_state("input_select.radio_station", "Radio Darom") %} http://audio-darom.ecast.co.il:9000/darom97fm
+            {% elif is_state("input_select.radio_station", "Kol Hayam Haadom 102FM") %} http://eilat.cdnwz.net/102fm
+            {% endif %}
+           media_content_type: 'audio/mp4'

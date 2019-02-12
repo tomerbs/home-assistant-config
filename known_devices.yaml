@@ -1,0 +1,33 @@
+
+pi_samsung:
+  hide_if_away: false
+  icon:
+  mac: 08:C5:E1:4E:53:22
+  name: T
+  picture: /local/tomerb.jpg
+  track: true
+
+pi_samsungs9plus:
+  hide_if_away: false
+  icon: 
+  mac: 6C:C7:EC:0F:FA:0E
+  name: N
+  picture: /local/nataligbs.jpg
+  track: true
+
+galaxys9_nmap:
+  hide_if_away: false
+  icon:
+  mac: 08:C5:E1:4E:53:22
+  name: Galaxy-S9
+  picture: /local/tomerb.jpg
+  track: true
+
+galaxys9plus_nmap:
+  hide_if_away: false
+  icon:
+  mac: 6C:C7:EC:0F:FA:0E
+  name: Galaxy-S9-plus
+  picture: /local/nataligbs.jpg
+  track: true
+

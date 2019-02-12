@@ -1,0 +1,144 @@
+sensor.vacuum_cleaner_filter:
+  entity_picture: /local/lovelace/vacuum/filter.png
+sensor.vacuum_cleaner_main_brush:
+  entity_picture: /local/lovelace/vacuum/main_brush.png
+sensor.vacuum_cleaner_side_brush:
+  entity_picture: /local/lovelace/vacuum/side_brush.png
+sensor.vacuum_clean_sensors:
+  entity_picture: /local/lovelace/vacuum/sensors.png
+sensor.disk_use_percent:
+  friendly_name: Disk Usage
+sensor.ram_free:
+  friendly_name: Free Memory
+sensor.ram_use:
+  icon: mdi:memory
+weather.yweather:
+  friendly_name: Weather
+switch.outdoor_speakers:
+  icon: mdi:speaker-wireless
+light.lians_room_fan_light:
+  icon: mdi:ceiling-light
+light.lians_yeelight_rgb_light:  
+  icon: mdi:lamp
+light.bathroom:
+  icon: mdi:ceiling-light  
+light.master_bedroom_fan:
+  icon: mdi:fan
+light.orins_room_fan:
+  icon: mdi:fan
+light.tv_backlight:
+  icon: mdi:led-strip
+sensor.processor_use:
+  icon: mdi:speedometer
+light.tomer_bed_light:
+  icon: mdi:lamp
+light.natali_bed_light:
+  icon: mdi:lamp
+light.living_room_light:
+  icon: mdi:ceiling-light
+light.master_bedroom_light:
+  icon: mdi:ceiling-light
+light.orins_room_light:
+  icon: mdi:ceiling-light
+sensor.home_humidity:
+  icon: mdi:water-percent
+light.cabinet:
+  icon: mdi:led-strip
+switch.ac:
+  icon: mdi:air-conditioner
+sensor.since_last_boot_templated:
+  friendly_name: Time Since Last Boot
+sensor.neo_coolcam_water_leakage_sensor:
+  icon: mdi:water-pump
+  friendly_name: Water Leakage Sensor
+sensor.vacuum_cleaner_battery:
+  friendly_name: Battery
+binary_sensor.door_window_sensor_158d0001a1f88b:
+  friendly_name: Cabinet Door Sensor
+binary_sensor.door_window_sensor_158d0001a1f88b_battery:
+  friendly_name: Cabinet Door Sensor Battery
+sensor.illumination_34ce00fb6e68:
+  friendly_name: Illumination
+binary_sensor.door_window_sensor_158d00016cf3b7:
+  friendly_name: Entrance Door Sensor
+binary_sensor.door_window_sensor_158d00016cf3b7_battery:
+  friendly_name: Entrance Door Sensor Battery  
+sensor.cpu_symbol:
+  friendly_name: Whether
+sensor.tomer_location:
+  entity_picture: /local/tomerb.jpg
+sensor.natali_location:
+  entity_picture: /local/nataligbs.jpg
+sensor.battery_tomer:
+  friendly_name: Samsung S9 Battery
+sensor.battery_natali:
+  friendly_name: Samsung S9Plus Battery
+light.gateway_light_34ce00fb6e68:
+  friendly_name: Orin's Gateway Light
+  icon: mdi:adjust
+light.gateway_light_7811dcb24e70:
+  friendly_name: Living Room Gateway Light
+  icon: mdi:adjust  
+light.sonoff_test1:
+  friendly_name: Dining Room
+  icon: mdi:ceiling-light
+light.sonoff_test2:
+  friendly_name: Kitchen Sink
+  icon: mdi:ceiling-light
+input_boolean.disable_daily_vacuum:
+  icon: mdi:stop-circle-outline
+input_boolean.disable_dustbin_notification:
+  icon: mdi:delete-empty  
+sensor.dark_sky_humidity:
+  friendly_name: Outside Humidity
+sensor.dark_sky_temperature:
+  friendly_name: Outside Temperature
+group.fix_watch_tv:
+  icon: mdi:wrench
+group.fix_watch_a_movie:
+  icon: mdi:wrench
+sensor.vacuum_cleaner_fan_speed:
+  icon: mdi:speedometer
+sensor.vacuum_cleaner_area_cleaned:
+  icon: mdi:home-variant-outline
+sensor.vacuum_cleaner_main_brush_cleaning_time:
+  icon: mdi:clock-outline
+script.vacuum_all_house:
+  friendly_name: All House
+script.vacuum_living_room:
+  friendly_name: Living Room
+script.vacuum_dining_room:
+  friendly_name: Dining Room
+script.vacuum_kitchen:
+  friendly_name: Kitchen
+script.vacuum_m_bedroom:
+  friendly_name: M.Bedroom
+script.vacuum_lians_room:
+  friendly_name: Lians
+script.vacuum_orins_room:
+  friendly_name: Orins & Ela
+script.vacuum_office:
+  friendly_name: Office
+script.vacuum_bathroom:
+  friendly_name: Bathroom
+script.vacuum_hallway:
+  friendly_name: Hallway
+switch.fibaro_system_fgs223_double_relay_switch_2:
+  icon: mdi:wall-sconce
+switch.fibaro_system_fgs223_double_relay_switch:
+  icon: mdi:ceiling-light  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

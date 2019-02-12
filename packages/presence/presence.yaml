@@ -1,0 +1,122 @@
+#################################################################
+#                                                               #
+#                       Packages/Presence                       #
+#                                                               #
+#################################################################
+
+#################################################################
+#                                                               #
+#                           Group                               #
+#                                                               #
+################################################################# 
+      
+group:
+  people:
+    name: People
+    view: no
+    entities:
+      - sensor.tomer
+      - sensor.battery_tomer
+      - sensor.natali
+      - sensor.battery_natali
+
+#################################################################
+#                                                               #
+#                      Device Trackers                          #
+#                                                               #
+################################################################# 
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts:
+      - 10.0.0.42
+      - 10.0.0.43
+    home_interval: 10
+      
+  - platform: owntracks
+    max_gps_accuracy: 200
+    
+
+    
+
+#################################################################
+#                                                               #
+#                          Sensors                              #
+#                                                               #
+################################################################# 
+
+## Batteries
+sensor:
+  - platform: mqtt
+    state_topic: "owntracks/pi/samsung"
+    name: "Battery Tomer"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.batt }}'
+    device_class: battery
+    
+  - platform: mqtt
+    state_topic: "owntracks/pi/samsungS9plus"
+    name: "Battery Natali"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.batt }}'
+    device_class: battery
+  
+  - platform: template  
+    sensors:  
+      tomer_location:
+        friendly_name: "Tomer Location"
+        value_template: >-
+          {% if is_state('binary_sensor.tomer_home', 'on') %}
+            Home
+          {% else %}
+              {{ states.device_tracker.pi_samsung.state }}
+          {% endif %}
+        icon_template: >-
+          {% if is_state('sensor.tomer_location', 'Home') %}
+            mdi:home
+          {% else %}
+            mdi:walk
+          {% endif %}
+          
+      natali_location:
+        friendly_name: "Natali Location"
+        value_template: >-
+          {% if is_state('binary_sensor.natali_home', 'on') %}
+            Home
+          {% else %}
+              {{ states.device_tracker.pi_samsungS9plus.state }}
+          {% endif %}        
+        icon_template: >-
+          {% if is_state('sensor.natali_location', 'Home') %}
+            mdi:home
+          {% else %}
+            mdi:walk
+          {% endif %}
+
+automation:
+  ## Refresh Owntracks Natali
+  - id: '1549564729902'
+    alias: Refresh Owntracks Natali
+    trigger:
+      platform: time_pattern
+      minutes: '/5'
+    condition: []
+    action:
+    - alias: ''
+      data:
+        topic: "owntracks/pi/samsungS9plus/cmd"
+        payload_template: '{"_type":"cmd","action":"reportLocation","batt":"%BATT"}'
+      service: mqtt.publish
+  ## Refresh Owntracks Tomer
+  - id: '1236564729632'
+    alias: Refresh Owntracks Tomer
+    trigger:
+      platform: time_pattern
+      minutes: '/5'
+    condition: []
+    action:
+    - alias: ''
+      data:
+        topic: "owntracks/pi/samsungs9/cmd"
+        payload_template: '{"_type":"cmd","action":"reportLocation","batt":"%BATT"}'
+      service: mqtt.publish

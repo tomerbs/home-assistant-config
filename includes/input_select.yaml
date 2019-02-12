@@ -1,0 +1,25 @@
+living_room_tv:
+  name: Living Room TV
+  options:
+    - PowerOff
+    - Watch TV
+    - Movie Time
+    - Listen to Music
+    - Playstation 4
+  initial: PowerOff
+  icon: mdi:monitor
+  
+vacuum_room:
+  name: Choose Room to Clean
+  options:
+    - Select Room
+    - M_Bedroom
+    - Lians Room
+    - Orins Room
+    - Dining Room
+    - Hallway
+    - Kitchen
+    - Living Room
+    - Bathroom
+    - Office
+  initial: Select Room

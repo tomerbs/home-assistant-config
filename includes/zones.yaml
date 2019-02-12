@@ -1,0 +1,41 @@
+  - name: Home
+    latitude: 31.7516975
+    longitude: 35.2008398
+    radius: 100
+    icon: mdi:home
+    
+  - name: Tomers Work
+    latitude: 32.007758
+    longitude: 34.800637
+    radius: 100
+    icon: mdi:Briefcase
+
+  - name: Natalis Work
+    latitude: 31.778231
+    longitude: 35.215951
+    radius: 100
+    icon: mdi:Briefcase
+    
+  - name: Lians School
+    latitude: 31.770616
+    longitude: 35.209583
+    radius: 100
+    icon: mdi:School
+    
+  - name: Orins  School
+    latitude: 31.766369
+    longitude: 35.204819
+    radius: 100
+    icon: mdi:School
+    
+  - name: Rafis House
+    latitude: 31.765063
+    longitude: 35.228332
+    radius: 100
+    icon: mdi:School
+    
+  - name: Malcha Shopping Mall
+    latitude: 31.751617
+    longitude: 35.187299
+    radius: 100
+    icon: mdi:Shopping

@@ -1,0 +1,39 @@
+  - platform: 'bayesian'
+    prior: 0.75
+    name: 'Natali Home'
+    probability_threshold: 0.95
+    observations:
+#      - entity_id: 'device_tracker.natalis_oneplus_3t_bluetooth'
+#        prob_given_true: 1
+#        platform: 'state'
+#        to_state: 'home'
+      - entity_id: 'device_tracker.galaxys9plus_nmap'
+        prob_given_true: 0.99
+        prob_given_false: 0.10
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'device_tracker.pi_samsungs9plus'
+        prob_given_true: 0.80
+        prob_given_false: 0.4
+        platform: 'state'
+        to_state: 'home'
+
+  - platform: 'bayesian'
+    prior: 0.75
+    name: 'Tomer Home'
+    probability_threshold: 0.95
+    observations:
+#      - entity_id: 'device_tracker.tomer_iphone_bluetooth'
+#        prob_given_true: 1
+#        platform: 'state'
+#        to_state: 'home'
+      - entity_id: 'device_tracker.galaxys9_nmap'
+        prob_given_true: 0.99
+        prob_given_false: 0.10
+        platform: 'state'
+        to_state: 'home'
+      - entity_id: 'device_tracker.pi_samsung'
+        prob_given_true: 0.80
+        prob_given_false: 0.4
+        platform: 'state'
+        to_state: 'home'

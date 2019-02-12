@@ -1,0 +1,22 @@
+  - platform: broadlink
+    name: Air Condition
+    host: 10.0.0.36
+    mac: '34:ea:34:ce:0a:c3'
+    ircodes_ini: 'custom_components/broadlink_climate_codes/fujitsu_ac.ini'
+    min_temp: 18
+    max_temp: 30
+    target_temp: 24
+    temp_sensor: sensor.home_temperature
+    default_operation: 'off'
+    default_fan_mode: mid
+    customize:
+      operations:
+        - 'off'
+        - cool
+        - heat
+      fan_modes:
+        - Quiet
+        - Low
+        - Mid
+        - High
+        - Auto
