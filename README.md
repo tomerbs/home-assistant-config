@@ -18,7 +18,6 @@ Lights popup:
 Lights Led popup:
 
 <img src="https://github.com/tomerbs/home-assistant-config/blob/master/Pictures/Popup Led Lights.PNG" style="max-width:100%;">
-
 Fans popup:
 
 <img src="https://github.com/tomerbs/home-assistant-config/blob/master/Pictures/Popup Fans.PNG" style="max-width:100%;">
