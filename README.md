@@ -11,6 +11,7 @@ Main Pictures:
 <img src="https://github.com/tomerbs/home-assistant-config/blob/master/Pictures/Xiaomi_Vacuum_Robot.PNG" style="max-width:100%;">
 <img src="https://github.com/tomerbs/home-assistant-config/blob/master/Pictures/Settings.PNG" style="max-width:100%;">
 Popup Menu:
+
 Lights popup:
 
 <img src="https://github.com/tomerbs/home-assistant-config/blob/master/Pictures/Popup Lights.PNG" style="max-width:100%;">
