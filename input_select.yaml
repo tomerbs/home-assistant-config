@@ -1,0 +1,69 @@
+vacuum_room:
+  name: Choose Room to Clean
+  options:
+    - Select Room
+    - M_Bedroom
+    - Lians Room
+    - Orins Room
+    - Dining Room
+    - Hallway
+    - Kitchen
+    - Living Room
+    - Bathroom
+    - Office
+  initial: Select Room
+
+# Radio
+
+radio_station:
+  name: 'Select Radio Station:'
+  options:
+    - GalGalatz
+    - Galatz
+    - Radius 100FM
+    - Echo 99FM
+    - Kan 88FM
+    - 103FM
+    - Lev Hamedina 91FM
+    - Reshet Gimel
+    - Radio Darom
+    - Kol Hayam Haadom 102FM
+  icon: mdi:radio 
+radio_speakers:
+  name: 'Select Speakers:'
+  options:
+    - All Speakers
+    - Kitchen     
+    - Orins Room
+    - Living Room
+    - Master Bedroom
+    - Lians Room
+    - Bathroom
+  initial: All Speakers
+  icon: mdi:speaker-wireless
+
+# Spotify
+
+spotify_playlist:
+  name: 'Playlist:'
+  options:
+    - Happy Hits
+    - Summer Hits
+    - 80s Dance
+    - Bob Marley
+    - Julio Iglesias
+    - Piano in the Background
+  initial: Happy Hits
+  icon: mdi:spotify
+spotify_source:
+  name: 'Source:'
+  options:
+    - All Speakers
+    - Kitchen     
+    - Orins Room
+    - Living Room
+    - Master Bedroom
+    - Lians Room
+    - Bathroom
+  initial: All Speakers
+  icon: mdi:speaker-wireless

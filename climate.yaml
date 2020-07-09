@@ -1,0 +1,6 @@
+  - platform: smartir
+    name: Air Condition
+    unique_id: air_condition
+    device_code: 1282
+    controller_data: 10.0.0.36
+    temperature_sensor: sensor.home_temperature

@@ -1,0 +1,4 @@
+  - platform: generic
+    name: Outdoor
+    still_image_url: rtsp://admin:classic052@10.0.0.8:10544/tcp/av0_0
+    stream_source: rtsp://admin:classic052@10.0.0.8:10544/tcp/av0_0

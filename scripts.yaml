@@ -1,0 +1,707 @@
+run_harmony_poweroff_activity:
+  alias: Run Harmony PowerOff Activity
+  sequence:
+  - data:
+      entity_id: input_boolean.remote_livingroom_harmony_poweroff
+    service: input_boolean.turn_on
+run_harmony_watch_tv_activity:
+  alias: Run Harmony Watch TV Activity
+  sequence:
+  - data:
+      entity_id: input_boolean.remote_livingroom_harmony_watch_tv
+    service: input_boolean.turn_on
+run_harmony_playstation4_activity:
+  alias: Run Harmony Playstation 4 Activity
+  sequence:
+  - data:
+      entity_id: input_boolean.remote_livingroom_harmony_playstation4
+    service: input_boolean.turn_on
+play_spotify_music_menu:
+  sequence:
+  - data:
+      command: tv_remote
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Play Spotify Music Menu
+play_radio_menu:
+  sequence:
+  - data:
+      command: tv_remote
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Play Radio Menu
+watch_tv_remote_menu:
+  sequence:
+  - data:
+      command: tv_remote
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Watch TV Remote Menu
+fix_watch_tv_menu:
+  sequence:
+  - data:
+      command: tv_remote
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Fix Watch TV Menu
+playstation_remote_menu:
+  sequence:
+  - data:
+      command: tv_remote
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Playstation Remote Menu
+fix_playstation_menu:
+  sequence:
+  - data:
+      command: tv_remote
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Fix Playstation Menu
+fix_power_off_menu:
+  sequence:
+  - data:
+      command: tv_remote
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Fix Power Off Menu
+vacuum_room_clean:
+  sequence:
+  - data:
+      command: tv_remote
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Vacuum Room Clean
+harmony_command_direction_down:
+  sequence:
+  - data:
+      command: DirectionDown
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command DirectionDown
+harmony_command_direction_left:
+  sequence:
+  - data:
+      command: DirectionLeft
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command DirectionLeft
+harmony_command_direction_right:
+  sequence:
+  - data:
+      command: DirectionRight
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command DirectionRight
+harmony_command_direction_up:
+  sequence:
+  - data:
+      command: DirectionUp
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Direction Up
+harmony_command_select:
+  sequence:
+  - data:
+      command: Select
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Select
+harmony_command_stop:
+  sequence:
+  - data:
+      command: Stop
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Stop
+harmony_command_play:
+  sequence:
+  - data:
+      command: Play
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Play
+harmony_command_rewind:
+  sequence:
+  - data:
+      command: Rewind
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Rewind
+harmony_command_pause:
+  sequence:
+  - data:
+      command: Pause
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Pause
+harmony_command_fastforward:
+  sequence:
+  - data:
+      command: FastForward
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command FastForward
+harmony_command_back:
+  sequence:
+  - data:
+      command: Back
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Back
+harmony_command_info:
+  sequence:
+  - data:
+      command: Info
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Info
+harmony_command_exit:
+  sequence:
+  - data:
+      command: Exit
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Exit
+harmony_command_menu:
+  sequence:
+  - data:
+      command: Home
+      device: 69011555
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Home
+harmony_command_volume_up:
+  sequence:
+  - data:
+      command: VolumeUp
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Volume Up
+harmony_command_volume_down:
+  sequence:
+  - data:
+      command: VolumeDown
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Volume Down
+harmony_command_mute:
+  sequence:
+  - data:
+      command: Mute
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Harmony Command Mute
+power_on_tv:
+  sequence:
+  - data:
+      command: PowerOn
+      device: 57752521
+    entity_id: remote.living_room
+    service: remote.send_command
+  - delay: '1'
+  alias: Power On TV
+power_off_tv:
+  sequence:
+  - data:
+      command: PowerOff
+      device: 57752521
+    entity_id: remote.living_room
+    service: remote.send_command
+  - delay: '1'
+  alias: Power Off TV
+tv_input_video5:
+  sequence:
+  - data:
+      command: Input5
+      device: 57752521
+    entity_id: remote.living_room
+    service: remote.send_command
+  - delay: '1'
+  alias: Tv Input Video5
+tv_input_video6:
+  sequence:
+  - data:
+      command: Input6
+      device: 57752521
+    entity_id: remote.living_room
+    service: remote.send_command
+  - delay: '1'
+  alias: Tv Input Video6
+tv_input_video7:
+  sequence:
+  - data:
+      command: Input7
+      device: 57752521
+    entity_id: remote.living_room
+    service: remote.send_command
+  - delay: '1'
+  alias: Tv Input Video7
+power_off_receiver:
+  sequence:
+  - data:
+      command: PowerOff
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  - delay: '1'
+  alias: Power Off Receiver
+power_on_receiver:
+  sequence:
+  - data:
+      command: PowerOn
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  - delay: '1'
+  alias: Power On Receiver
+fix_watch_tv_audio:
+  sequence:
+  - data:
+      command: InputNext
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  - delay: '2'
+  - data:
+      command: InputCD-R
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Fix Watch TV
+fix_playstation_audio:
+  sequence:
+  - data:
+      command: InputNext
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  - delay: '2'
+  - data:
+      command: InputAux
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Fix Playstation
+receiver_input_dvr:
+  sequence:
+  - data:
+      command: InputDvr
+      device: 57752975
+    entity_id: remote.living_room
+    service: remote.send_command
+  alias: Receiver InputDvr
+vacuum_all_house:
+  alias: Vacuum All House
+  sequence:
+  - data:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+    service: vacuum.start
+vacuum_m_bedroom:
+  alias: Vacuum Master Bedroom
+  sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      zone:
+      - - 22171
+        - 25241
+        - 26121
+        - 28791
+      repeats: 1
+vacuum_lians_room:
+  alias: Vacuum Lians Bedroom
+  sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      zone:
+      - - 18803
+        - 26116
+        - 22153
+        - 28766
+      repeats: 1
+vacuum_orins_room:
+  alias: Vacuum Orins Bedroom
+  sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      zone:
+      - - 22071
+        - 22206
+        - 26071
+        - 25106
+      repeats: 1
+vacuum_dining_room:
+  alias: Vacuum Dining Room
+  sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      zone:
+      - - 11269
+        - 27878
+        - 13819
+        - 30878
+      repeats: 1
+vacuum_hallway:
+  alias: Vacuum Hallway
+  sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      zone:
+      - - 18775
+        - 24867
+        - 22225
+        - 26117
+      repeats: 1
+vacuum_kitchen:
+  alias: Vacuum Kitchen
+  sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      zone:
+      - - 11861
+        - 24768
+        - 18761
+        - 27018
+      - - 11850
+        - 25527
+        - 13600
+        - 27927
+vacuum_living_room:
+  alias: Vacuum Living Room
+  sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      zone:
+      - - 13712
+        - 27140
+        - 18912
+        - 30740
+      repeats: 1
+vacuum_bathroom:
+  alias: Vacuum Main Bathroom
+  sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      zone:
+      - - 15789
+        - 22281
+        - 19539
+        - 24731
+      repeats: 1
+vacuum_elas_room:
+  alias: Vacuum Elas Bedroom
+  sequence:
+  - service: xiaomi_miio.vacuum_clean_zone
+    data_template:
+      entity_id: vacuum.xiaomi_vacuum_cleaner
+      zone:
+      - - 19824
+        - 22255
+        - 22074
+        - 24855
+      repeats: 1
+air_condition_swing_left_right:
+  alias: Swing Left Right
+  sequence:
+  - data:
+      host: 10.0.0.36
+      packet:
+      - JgB2AGw0EAsODQ4oDwsPJw8MDg0ODA4oDyYQCw4NDg0OJw8nDwwODQ4MDwwODQ4MDwwPDA8MDg0ODQ4MDwwOKA8MDgwPDA4NDg0ODQ4MDigPDA4MDwwOKA4NDgwPJw8mECYOKA8LDwsQJw4nDwwPDA4NDg0PJg8ADQUAAA==
+    service: broadlink.send
+  - delay: 00:00:01
+air_condition_swing_up_down:
+  alias: Swing Up Down
+  sequence:
+  - data:
+      host: 10.0.0.36
+      packet:
+      - JgB2AG4zDwwNDg4nDg0OKA4MDwwODQ4nDycODQ4NDgwPJw8nDgwPDA4NDg0ODQ0NDgwPDBAMDgwPDA4NDg0OJw8MDg0ODQ4NDgwODQ0ODicPDA8MDg0ODA8MECYPJw4MDigPJhALDigPJg8MDgsQKA8LDg0OKA8ADQUAAA==
+    service: broadlink.send
+  - delay: 00:00:01
+air_condition_auto_swing:
+  alias: Auto Swing
+  sequence:
+  - data:
+      host: 10.0.0.36
+      packet:
+      - JgAGAW00Dg0ODBAmDg0OJw8MDg0ODQ4nDycODQ4NDgwPJw4nDwwPDA4NDg0ODA8MDg0ODQ4NDgwPDA4NDg0OJw4NDgwPDQ4MDwwODQ4NDicPDA4NDQ4ODQ4nDigOJw4oDicPJw4oDicODQ4NDicODBAKEA0NDQ8MDg0ODQ0ODSgOKA4MDwwODQ0ODQ4NDQ8KECgODQ4MDycODQ4MDgwPDQ4NDg0ODA8nDg0ODQ4MDigOJw8MDg0NDg0ODgwODQ4NDg0ODQ4MDwwODQ4NDg0ODA4NDg0ODA8MDwwODQ4NDg0ODA4NDg0ODQ4NDgwODQ4NDicPDA4NDg0OJw8nDicPJw4NDicPDA4ADQUAAA==
+    service: broadlink.send
+master_bedroom_fan_light:
+  alias: Master Bedroom Light
+  sequence:
+  - data:
+      host: 10.0.0.37
+      packet:
+      - sgCeAQqUCh0KHQoeHgkeCR4JCh4KHQoeHQoeCh0KCh0KHh4JCh4KHgodCx0eCQoeCh0LHQoeCh4KHQsdHgoeCR4KHgodCh8KCh4eCh4KHgoeCgodHwkLkwoeCR4KHR4JHgkeCgodCh4KHR4JHgoeCQsdCh0eCQsdCx0KHQsdHgkLHQsdCh4KHQsdCh4KHR4KHgoeCR4KHgoeCgsdHgoeCh4KHgoKHh4KCpMKHgodCh0eCh0KHgkKHQoeCh4dCh0KHgkLHQodHgoKHgodCh0LHR4KCh4KHQoeCh4KHQsdCh4eCh0KHgoeCR4KHgoLHR4KHgoeCh4KCx0eCgqTCh4KHQodHgoeCR4JCxwLHQodHgoeCR4KCh0KHh4JCh4KHgodCh4dCgoeCh0KHgoeCh0LHQsdHgodCh4KHgkeCh8KCh0fCR8JHgseCQseHgkKlAodCh4JHh0KHgodCQsdCh0KHh4JHgodCgoeCh0eCQsdCh4KHQoeHgoKHQoeCh0KHgoeCh0LHR4KHgodCh4KHgoeCgodHwoeCh4KHgoKHh4JBAAF3AAAAAAAAAAAAAA=
+    service: broadlink.send
+master_bedroom_fan_off:
+  alias: Master Bedroom Fan Off
+  sequence:
+  - data:
+      speed: 'off'
+    entity_id: fan.bond_master_bedroom_fan
+    service: fan.turn_on
+master_bedroom_fan_speed_1:
+  alias: Master Bedroom Fan Speed 1
+  sequence:
+  - data:
+      speed: '1'
+    entity_id: fan.bond_master_bedroom_fan
+    service: fan.turn_on
+master_bedroom_fan_speed_2:
+  alias: Master Bedroom Fan Speed 2
+  sequence:
+  - data:
+      speed: '2'
+    entity_id: fan.bond_master_bedroom_fan
+    service: fan.turn_on
+master_bedroom_fan_speed_3:
+  alias: Master Bedroom Fan Speed 3
+  sequence:
+  - data:
+      speed: '4'
+    entity_id: fan.bond_master_bedroom_fan
+    service: fan.turn_on
+good_morning_scene:
+  alias: Good Morning Scene
+  sequence:
+  - data: {}
+    entity_id: switch.fibaro_bar_lights, switch.fibaro_dining_room, switch.fibaro_kitchen_sink,
+      switch.fibaro_kitchn_stove, switch.tkb_hallway
+    service: switch.turn_on
+  - data: {}
+    entity_id: script.morning_music_alarm
+    service: script.turn_on
+  - delay: 00:00:01
+good_night_scene:
+  alias: Good Night Scene
+  sequence:
+  - data: {}
+    entity_id: light.gateway_light_7811dcb24e70
+    service: light.turn_on
+  - data: {}
+    entity_id: script.run_harmony_poweroff_activity
+    service: script.turn_on
+  - data: {}
+    entity_id: fan.ela_ifan, fan.lian_ifan, fan.orin_ifan
+    service: fan.turn_off
+  - data: {}
+    entity_id: light.cabinet, light.computer_backlight, light.ela_ifan_light, light.gateway_light_34ce00fb6e68,
+      light.lian_ifan_light, light.natali_bed_light, light.orin_flower_light, light.orins_ifan_light,
+      light.tomer_bed_light
+    service: light.turn_off
+  - data: {}
+    entity_id: switch.fibaro_bar_lights, switch.fibaro_bathroom, switch.fibaro_dining_room,
+      switch.fibaro_front_porch_lights, switch.fibaro_garden_lights, switch.fibaro_kitchen_sink,
+      switch.fibaro_kitchn_stove, switch.fibaro_laundry_room, switch.tkb_living_room,
+      switch.tkb_hallway, switch.outdoor_speakers, switch.lians_desk_lamp, switch.orin_desk_lamp
+    service: switch.turn_off
+  - delay: 00:00:01
+leave_home_scene:
+  alias: Leave Home Scene
+  sequence:
+  - data: {}
+    entity_id: script.run_harmony_poweroff_activity
+    service: script.turn_on
+  - data: {}
+    entity_id: fan.ela_ifan, fan.lian_ifan, fan.orin_ifan
+    service: fan.turn_off
+  - data: {}
+    entity_id: light.cabinet, light.computer_backlight, light.ela_ifan_light, light.gateway_light_34ce00fb6e68,
+      light.gateway_light_7811dcb24e70, light.lian_ifan_light, light.natali_bed_light,
+      light.orin_flower_light, light.orins_ifan_light, light.tomer_bed_light, light.tv_backlight
+    service: light.turn_off
+  - data: {}
+    entity_id: script.master_bedroom_tv_off
+    service: script.turn_on
+  - data: {}
+    entity_id: switch.fibaro_bar_lights, switch.fibaro_bathroom, switch.fibaro_dining_room,
+      switch.fibaro_front_porch_lights, switch.fibaro_garden_lights, switch.fibaro_kitchen_sink,
+      switch.fibaro_kitchn_stove, switch.fibaro_laundry_room, switch.tkb_living_room,
+      switch.tkb_hallway, switch.outdoor_speakers, switch.lians_desk_lamp, switch.orin_desk_lamp
+    service: switch.turn_off
+  - delay: 00:00:01
+  - data: {}
+    entity_id: media_player.all_speakers
+    service: media_player.turn_off
+movie_time_scene:
+  alias: Movie Time Scene
+  sequence:
+  - data: {}
+    entity_id: light.tv_backlight
+    service: light.turn_on
+  - data: {}
+    entity_id: switch.fibaro_bar_lights
+    service: switch.turn_on
+  - data: {}
+    entity_id: switch.fibaro_dining_room, switch.fibaro_kitchen_sink, switch.fibaro_kitchn_stove,
+      switch.tkb_living_room, switch.tkb_hallway
+    service: switch.turn_off
+  - delay: 00:00:01
+party_time_scene:
+  alias: Party Time Scene
+  sequence:
+  - data: {}
+    entity_id: light.cabinet, light.computer_backlight, light.ela_ifan_light, light.gateway_light_34ce00fb6e68,
+      light.gateway_light_7811dcb24e70, light.lian_ifan_light, light.natali_bed_light,
+      light.orin_flower_light, light.orins_ifan_light, light.tomer_bed_light, light.tv_backlight
+    service: light.turn_on
+  - data: {}
+    entity_id: switch.fibaro_bar_lights, switch.fibaro_bathroom, switch.fibaro_dining_room,
+      switch.fibaro_front_porch_lights, switch.fibaro_garden_lights, switch.fibaro_kitchen_sink,
+      switch.fibaro_kitchn_stove, switch.fibaro_laundry_room, switch.tkb_living_room,
+      switch.tkb_hallway, switch.outdoor_speakers, switch.lians_desk_lamp, switch.orin_desk_lamp
+    service: switch.turn_on
+  - delay: 00:00:01
+morning_music_alarm:
+  sequence:
+  - data:
+      entity_id: media_player.all_speakers
+    service: media_player.turn_on
+  - delay: '3'
+  - data:
+      entity_id: media_player.all_speakers
+      volume_level: 0
+    service: media_player.volume_set
+  - data:
+      entity_id: media_player.all_speakers
+      media_content_id: http://player.gl.bynetcdn.com/Redirector/glz/glglz/ICE-live
+      media_content_type: audio/mp4
+    service: media_player.play_media
+  - data:
+      entity_id: media_player.all_speakers
+      volume_level: 0.2
+    service: media_player.volume_set
+  - delay: '20'
+  - data:
+      entity_id: script.morning_music_increasing_volume
+    service: script.turn_on
+  alias: Morning Music Alarm
+morning_music_increasing_volume:
+  sequence:
+  - data:
+      entity_id: media_player.all_speakers
+      volume_level: 0.2
+    service: media_player.volume_set
+  - delay: '20'
+  - data:
+      entity_id: media_player.all_speakers
+      volume_level: 0.3
+    service: media_player.volume_set
+  - delay: '20'
+  - data:
+      entity_id: media_player.all_speakers
+      volume_level: 0.4
+    service: media_player.volume_set
+  - delay: '20'
+  - data:
+      entity_id: media_player.all_speakers
+      volume_level: 0.5
+    service: media_player.volume_set
+  - delay: '20'
+  alias: Morning Music Increasing Volume
+radio538:
+  alias: Play Radio
+  sequence:
+  - data_template:
+      entity_id: "{% if is_state(\"input_select.radio_speakers\", \"Living Room\"\
+        ) %} media_player.living_room {% elif is_state(\"input_select.radio_speakers\"\
+        , \"Kitchen\") %} media_player.kitchen {% elif is_state(\"input_select.radio_speakers\"\
+        , \"Master Bedroom\") %} media_player.master_bedroom {% elif is_state(\"input_select.radio_speakers\"\
+        , \"Orins Room\") %} media_player.orins_room {% elif is_state(\"input_select.radio_speakers\"\
+        , \"Lians Room\") %} media_player.lians_room {% elif is_state(\"input_select.radio_speakers\"\
+        , \"All Speakers\") %} media_player.all_speakers {% elif is_state(\"input_select.radio_speakers\"\
+        , \"Bathroom\") %} media_player.bathroom {% elif is_state(\"input_select.radio_speakers\"\
+        , \"Google Outdoor\") %} media_player.google_outdoor          {% endif %}\
+        \        \n"
+      media_content_id: '{% if is_state("input_select.radio_station", "GalGalatz")
+        %} http://player.gl.bynetcdn.com/Redirector/glz/glglz/ICE-live {% elif is_state("input_select.radio_station",
+        "Galatz") %} http://player.gl.bynetcdn.com/Redirector/glz/glz/ICE-live {%
+        elif is_state("input_select.radio_station", "Radius 100FM") %} http://100fm.streamgates.net/Radios100Fm
+        {% elif is_state("input_select.radio_station", "Echo 99FM") %} http://99.livecdn.biz/99fm_aac
+        {% elif is_state("input_select.radio_station", "Kan 88FM") %} http://radiocast-rr-d.vidnt.com/ipbc_IPBC88LAM
+        {% elif is_state("input_select.radio_station", "103FM") %} http://103fm.live.streamgates.net/103fm_live/1multix/icecast.audio
+        {% elif is_state("input_select.radio_station", "Lev Hamedina 91FM") %} http://gb92.multix-technologies.com/Lev91Fm
+        {% elif is_state("input_select.radio_station", "Reshet Gimel") %} http://radiocast-rr-d.vidnt.com/ipbc_IPBCgimmelLAM
+        {% elif is_state("input_select.radio_station", "Radio Darom") %} http://audio-darom.ecast.co.il:9000/darom97fm
+        {% elif is_state("input_select.radio_station", "Kol Hayam Haadom 102FM") %}
+        http://eilat.cdnwz.net/102fm {% endif %}
+
+        '
+      media_content_type: audio/mp4
+    service: media_player.play_media
+  - delay: '1'
+spotify_music:
+  sequence:
+  - data_template:
+      entity_id: '{% if is_state("input_select.spotify_source", "All Speakers") %}
+        media_player.all_speakers {% elif is_state("input_select.spotify_source",
+        "Kitchen") %} media_player.kitchen {% elif is_state("input_select.spotify_source",
+        "Orins Room") %} media_player.orins_room {% elif is_state("input_select.spotify_source",
+        "Living Room") %} media_player.living_room {% elif is_state("input_select.spotify_source",
+        "Master Bedroom") %} media_player.master_bedroom {% elif is_state("input_select.spotify_source",
+        "Lians Room") %} media_player.lians_room {% elif is_state("input_select.spotify_source",
+        "Google Outdoor") %} media_player.google_outdoor         {% elif is_state("input_select.spotify_source",
+        "Bathroom") %} media_player.bathroom {% endif %}
+
+        '
+      volume_level: 0.5
+    service: media_player.volume_set
+  - delay: '2'
+  - data_template:
+      entity_id: '{% if is_state("input_select.spotify_source", "All Speakers") %}
+        media_player.all_speakers {% elif is_state("input_select.spotify_source",
+        "Kitchen") %} media_player.kitchen {% elif is_state("input_select.spotify_source",
+        "Orins Room") %} media_player.orins_room {% elif is_state("input_select.spotify_source",
+        "Living Room") %} media_player.living_room {% elif is_state("input_select.spotify_source",
+        "Master Bedroom") %} media_player.master_bedroom {% elif is_state("input_select.spotify_source",
+        "Lians Room") %} media_player.lians_room {% elif is_state("input_select.spotify_source",
+        "Google Outdoor") %} media_player.google_outdoor {% elif is_state("input_select.spotify_source",
+        "Bathroom") %} media_player.bathroom {% endif%}
+
+        '
+      random_song: true
+      uri: '{% if is_state("input_select.spotify_playlist", "Summer Hits") %} spotify:user:spotify:playlist:37i9dQZF1DWZKxDdpAkEjR
+        {% elif is_state("input_select.spotify_playlist", "80s Dance") %} spotify:playlist:2rdqJc9UxEbt5Ff8qrS5pB
+        {% elif is_state("input_select.spotify_playlist", "Bob Marley") %} spotify:playlist:0NnnXJtgjnzkpdT9BNRlY3
+        {% elif is_state("input_select.spotify_playlist", "Julio Iglesias") %} spotify:playlist:0gpDsLoGK0ylw3ColHhx5i
+        {% elif is_state("input_select.spotify_playlist", "Piano in the Background")%}
+        spotify:user:spotify:playlist:37i9dQZF1DX7K31D69s4M1 {% elif is_state("input_select.spotify_playlist",
+        "Happy Hits") %} spotify:user:spotify:playlist:37i9dQZF1DXdPec7aLTmlC {% endif
+        %}
+
+        '
+    service: spotcast.start
+  alias: Play Music

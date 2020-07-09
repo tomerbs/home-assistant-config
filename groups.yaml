@@ -1,0 +1,190 @@
+
+  all_xiaomi_devices:
+    name: All Xiaomi Devices
+    entities: 
+    - binary_sensor.door_window_sensor_158d0001a1f88b   # Kitchen Cabinet
+    - sensor.cabinet_sensor_battery
+    - binary_sensor.door_window_sensor_158d000395642c   # Air Condition
+    - sensor.air_condition_sensor_battery
+    - binary_sensor.door_window_sensor_158d00016cf3b7   #front Door
+    - sensor.entrance_sensor_battery
+    - light.gateway_light_34ce00fb6e68
+    - light.gateway_light_7811dcb24e70
+    - binary_sensor.switch_158d0001f9f305
+    - sensor.lians_button_switch_battery
+    - binary_sensor.motion_sensor_158d0001a1f1ff        # Lians Sensor
+    - sensor.lians_motion_sensor_battery
+
+  all_automations:
+    name: All Automations
+    entities:
+      - automation.ac_turn_off_from_remote
+      - automation.ac_turn_on_from_remote
+      - automation.cabinet_light_off
+      - automation.cabinet_light_on
+      - automation.elas_light_on_off_on_tkb_switch_toggle
+      - automation.enter_home
+      - automation.good_morning_alarm
+      - automation.hass_harmony_playstation_4
+      - automation.hass_harmony_poweroff
+      - automation.hass_harmony_watch_tv
+      - automation.home_assistant_has_started
+      - automation.home_assistant_restarted
+      - automation.ifttt_webhook
+      - automation.lians_light_on_off_on_tkb_switch_toggle
+      - automation.lians_room_sensor_turn_off_light_after_10_minutes
+      - automation.lians_room_sensor_turn_on_light
+      - automation.master_bedroom_light_on_off_on_fibaro_switch_toggle
+      - automation.orins_light_on_off_on_tkb_switch_toggle
+      - automation.remote_harmony_playstation_4
+      - automation.remote_harmony_poweroff
+      - automation.remote_harmony_watch_tv
+      - automation.set_radio_volume
+      - automation.set_spotify_volume
+      - automation.start_cleaning_room
+      - automation.turn_all_automation_at_startup
+      - automation.warehouse_flood_alert_email
+      - automation.warehouse_flood_alert_ifttt
+
+  all_scripts:
+    name: All Scripts
+    entities:
+      - script.harmony_command_direction_down
+      - script.harmony_command_direction_left
+      - script.harmony_command_direction_right
+      - script.harmony_command_direction_up
+      - script.harmony_command_exit
+      - script.harmony_command_info
+      - script.harmony_command_menu
+      - script.harmony_command_mute
+      - script.harmony_command_rewind
+      - script.harmony_command_select
+      - script.harmony_command_stop
+      - script.harmony_command_volume_down
+      - script.harmony_command_volume_up
+      - script.master_bedroom_fan_light
+      - script.morning_music_alarm
+      - script.morning_music_increasing_volume
+      - script.power_off_receiver
+      - script.power_off_tv
+      - script.power_on_receiver
+      - script.power_on_tv
+      - script.radio538
+      - script.receiver_input_dvr
+      - script.run_harmony_playstation4_activity
+      - script.run_harmony_poweroff_activity
+      - script.run_harmony_watch_tv_activity
+      - script.tv_input_video5
+      - script.tv_input_video6
+      - script.tv_input_video7
+      - script.vacuum_all_house
+      - script.vacuum_bathroom
+      - script.vacuum_dining_room
+      - script.vacuum_hallway
+      - script.vacuum_kitchen
+      - script.vacuum_lians_room
+      - script.vacuum_living_room
+      - script.vacuum_m_bedroom
+      - script.vacuum_office
+      - script.vacuum_orins_room
+
+  all_fans:
+    name: All Fans
+    entities:   
+      - fan.ela_ifan
+      - fan.lian_ifan
+      - fan.m_bedroom_fan
+      - fan.orin_ifan
+
+  all_zwave_devices:
+    name: All Z-wave Devices
+    entities: 
+      - zwave.aeon_labs_zw090_z_stick_gen5_eu
+      - zwave.fibaro_system_fgs223_double_relay
+      - zwave.fibaro_system_fgs223_double_relay_2
+      - zwave.fibaro_system_fgs223_double_relay_4
+      - zwave.fibaro_system_fgs223_double_relay_5
+      - zwave.tkb_home_tz68_on_off_switch_socket
+      - zwave.tkb_home_tz68_on_off_switch_socket_2
+      - zwave.tkb_home_tz68_on_off_switch_socket_4
+      - zwave.tkb_home_tz68_on_off_switch_socket_5
+      - sensor.neo_coolcam_water_leakage_sensor
+      - binary_sensor.neo_coolcam_door_sensor
+      - sensor.zwave_neo_coolcam_water_leakage_detector_battery
+      
+  all_lights:
+    name: All Lights
+    entities:
+      - light.cabinet
+      - light.computer_backlight
+      - light.ela_ifan_light
+      - light.gateway_light_34ce00fb6e68
+      - light.gateway_light_7811dcb24e70
+      - light.lian_ifan_light
+      - light.master_bedroom_light
+      - light.natali_bed_light
+      - light.orin_flower_light
+      - light.orins_ifan_light
+      - light.tomer_bed_light
+      - light.tv_backlight
+      
+  all_fibaro_light_switches:
+    name: All Fibaro Light Switches
+    entities:
+      - switch.fibaro_bar_lights
+      - switch.fibaro_bathroom
+      - switch.fibaro_dining_room
+      - switch.fibaro_front_porch_lights
+      - switch.fibaro_garden_lights
+      - switch.fibaro_kitchen_sink
+      - switch.fibaro_kitchn_stove
+      - switch.fibaro_laundry_room
+
+  all_tkb_light_switches:
+    name: All TKB Light Switches
+    entities:
+      - switch.tkb_orins_room
+      - switch.tkb_living_room
+      - switch.tkb_lians_room
+      - switch.tkb_hallway
+      - switch.tkb_elas_room
+
+  all_additional_switches:
+    name: All Lights Switches
+    entities:      
+      - switch.outdoor_speakers
+      - switch.lians_desk_lamp
+      - switch.orin_desk_lamp
+
+  all_switches:
+    name: All Switches
+    entities:  
+      - switch.fibaro_bar_lights
+      - switch.fibaro_bathroom
+      - switch.fibaro_dining_room
+      - switch.fibaro_front_porch_lights
+      - switch.fibaro_garden_lights
+      - switch.fibaro_kitchen_sink
+      - switch.fibaro_kitchn_stove
+      - switch.fibaro_laundry_room
+      - switch.tkb_orins_room
+      - switch.tkb_living_room
+      - switch.tkb_lians_room
+      - switch.tkb_hallway
+      - switch.tkb_elas_room
+      - switch.outdoor_speakers
+      - switch.lians_desk_lamp
+      - switch.orin_desk_lamp
+
+  choose_room_to_clean:
+    name: Choose Room to Clean
+    entities:
+      - script.vacuum_living_room
+      - script.vacuum_dining_room
+      - script.vacuum_kitchen
+      - script.vacuum_m_bedroom
+      - script.vacuum_lians_room
+      - script.vacuum_orins_room
+      - script.vacuum_office
+      - script.vacuum_bathroom
+      - script.vacuum_hallway

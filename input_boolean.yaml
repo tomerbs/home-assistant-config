@@ -1,0 +1,25 @@
+    
+  remote_livingroom_harmony_poweroff:
+    name: PowerOff
+    icon: mdi:power
+    initial: off
+    
+  remote_livingroom_harmony_watch_tv:
+    name: Watch TV
+    icon: mdi:television
+    initial: off
+
+  remote_livingroom_harmony_playstation4:
+    name: Playstation 4
+    icon: mdi:playstation
+    initial: off
+
+# Alarm
+  alarm_clock_status:
+    name: Alarm On\Off
+    initial: on
+    icon: mdi:calendar
+  alarmweekday:
+    name: Weekdays Only
+    initial: off
+    icon: mdi:calendar

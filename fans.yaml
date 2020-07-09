@@ -1,0 +1,86 @@
+  - platform: smartir
+    name: M Bedroom Fan
+    unique_id: m_bedroom_fan
+    device_code: 1000
+    controller_data: 10.0.0.37
+
+  - platform: mqtt  
+    name: "Lian iFan"
+    command_topic: "cmnd/Lian-Ifan03/FanSpeed"
+    speed_command_topic: "cmnd/Lian-Ifan03/FanSpeed"    
+    state_topic: "stat/Lian-Ifan03/RESULT"
+    speed_state_topic: "stat/Lian-Ifan03/RESULT"
+    state_value_template: >
+      {% if value_json.FanSpeed is defined %}
+        {% if value_json.FanSpeed == 0 -%}0{%- elif value_json.FanSpeed > 0 -%}2{%- endif %}
+      {% else %}
+        {% if states.fan.lian_fan.attributes.speed == 'off' -%}0{%- elif states.fan.lian_fan.attributes.speed == 'on' -%}2{%- endif %}
+      {% endif %}
+    speed_value_template: "{{ value_json.FanSpeed }}"
+    availability_topic: tele/Lian-Ifan03/LWT
+    payload_off: "0"
+    payload_on: "2"
+    payload_low_speed: "1"
+    payload_medium_speed: "2"
+    payload_high_speed: "3"
+    payload_available: Online
+    payload_not_available: Offline
+    speeds:
+      - off
+      - low
+      - medium
+      - high 
+
+  - platform: mqtt  
+    name: "Orin iFan"
+    command_topic: "cmnd/Orin-Ifan03/FanSpeed"
+    speed_command_topic: "cmnd/Orin-Ifan03/FanSpeed"    
+    state_topic: "stat/Orin-Ifan03/RESULT"
+    speed_state_topic: "stat/Orin-Ifan03/RESULT"
+    state_value_template: >
+      {% if value_json.FanSpeed is defined %}
+        {% if value_json.FanSpeed == 0 -%}0{%- elif value_json.FanSpeed > 0 -%}2{%- endif %}
+      {% else %}
+        {% if states.fan.orin_ifan.attributes.speed == 'off' -%}0{%- elif states.fan.orin_ifan.attributes.speed == 'on' -%}2{%- endif %}
+      {% endif %}
+    speed_value_template: "{{ value_json.FanSpeed }}"
+    availability_topic: tele/Orin-Ifan03/LWT
+    payload_off: "0"
+    payload_on: "2"
+    payload_low_speed: "1"
+    payload_medium_speed: "2"
+    payload_high_speed: "3"
+    payload_available: Online
+    payload_not_available: Offline
+    speeds:
+      - off
+      - low
+      - medium
+      - high
+      
+  - platform: mqtt  
+    name: "Ela iFan"
+    command_topic: "cmnd/Ela-Ifan03/FanSpeed"
+    speed_command_topic: "cmnd/Ela-Ifan03/FanSpeed"    
+    state_topic: "stat/Ela-Ifan03/RESULT"
+    speed_state_topic: "stat/Ela-Ifan03/RESULT"
+    state_value_template: >
+      {% if value_json.FanSpeed is defined %}
+        {% if value_json.FanSpeed == 0 -%}0{%- elif value_json.FanSpeed > 0 -%}2{%- endif %}
+      {% else %}
+        {% if states.fan.ela_fan.attributes.speed == 'off' -%}0{%- elif states.fan.ela_fan.attributes.speed == 'on' -%}2{%- endif %}
+      {% endif %}
+    speed_value_template: "{{ value_json.FanSpeed }}"
+    availability_topic: tele/Ela-Ifan03/LWT
+    payload_off: "0"
+    payload_on: "2"
+    payload_low_speed: "1"
+    payload_medium_speed: "2"
+    payload_high_speed: "3"
+    payload_available: Online
+    payload_not_available: Offline
+    speeds:
+      - off
+      - low
+      - medium
+      - high

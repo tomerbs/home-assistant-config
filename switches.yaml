@@ -1,0 +1,70 @@
+  - platform: mqtt
+    name: "Outdoor Speakers"
+    command_topic: "cmnd/Outdoor_Speakers/power"
+    state_topic: "stat/Outdoor_Speakers/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Lians Desk Lamp"
+    command_topic: "cmnd/LianLamp/power"
+    state_topic: "stat/LianLamp/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Orin Desk Lamp"
+    command_topic: "cmnd/Orin_Lamp/power"
+    state_topic: "stat/Orin_Lamp/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    
+  - platform: mqtt
+    name: "MBedroom Voltage"
+    command_topic: "cmnd/MBedroom_Voltage/power"
+    state_topic: "stat/MBedroom_Voltage/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    retain: true
+
+  - platform: mqtt
+    name: "Roof Fan"
+    command_topic: "cmnd/Roof_Fan/power"
+    state_topic: "stat/Roof_Fan/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    
+  - platform: broadlink
+    host: 10.0.0.37
+    mac: '34:EA:34:D0:A9:4E'
+    
+  - platform: broadlink
+    host: 10.0.0.36
+    mac: '34:EA:34:CE:0A:C3'
+
+  - platform: wake_on_lan
+    mac: "FC:AA:14:BA:31:E6"
+    name: Office PC
+    host: "10.0.0.11"
+    turn_off:
+      service: hassio.addon_stdin
+      data:
+        addon: core_rpc_shutdown
+        input: office_pc
+
+  - platform: wake_on_lan
+    mac: "18:03:73:1A:9F:85"
+    name: Lians PC
+    host: "10.0.0.39"
+    turn_off:
+      service: hassio.addon_stdin
+      data:
+        addon: core_rpc_shutdown
+        input: lians_pc

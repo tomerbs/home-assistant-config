@@ -1,0 +1,112 @@
+  - name: M.Bedroom Gateway White
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_34ce00fb6e68:
+        state: on
+        xy_color: [0.323, 0.329]
+        brightness: 255
+  - name: M.Bedroom Gateway Purple
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_34ce00fb6e68:
+        state: on
+        xy_color: [0.217, 0.077]
+        brightness: 255
+  - name: M.Bedroom Gateway Blue
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_34ce00fb6e68:
+        state: on
+        xy_color: [0.136, 0.04]
+        brightness: 255
+  - name: M.Bedroom Gateway Azure
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_34ce00fb6e68:
+        state: on
+        xy_color: [0.151, 0.343]
+        brightness: 255        
+  - name: M.Bedroom Gateway Green
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_34ce00fb6e68:
+        state: on
+        xy_color: [0.172, 0.747]
+        brightness: 255
+  - name: M.Bedroom Gateway Yellow
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_34ce00fb6e68:
+        state: on
+        xy_color: [0.444, 0.517]
+        brightness: 255
+  - name: M.Bedroom Gateway Orange
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_34ce00fb6e68:
+        state: on
+        xy_color: [0.527, 0.447]
+        brightness: 255
+  - name: M.Bedroom Gateway Red
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_34ce00fb6e68:
+        state: on
+        xy_color: [0.701, 0.299]
+        brightness: 255
+  - name: Living Room Gateway White
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_7811dcb24e70:
+        state: on
+        xy_color: [0.323, 0.329]
+        brightness: 255
+  - name: Living Room Gateway Purple
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_7811dcb24e70:
+        state: on
+        xy_color: [0.217, 0.077]
+        brightness: 255
+  - name: Living Room Gateway Blue
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_7811dcb24e70:
+        state: on
+        xy_color: [0.136, 0.04]
+        brightness: 255
+  - name: Living Room Gateway Azure
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_7811dcb24e70:
+        state: on
+        xy_color: [0.151, 0.343]
+        brightness: 255        
+  - name: Living Room Gateway Green
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_7811dcb24e70:
+        state: on
+        xy_color: [0.172, 0.747]
+        brightness: 255
+  - name: Living Room Gateway Yellow
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_7811dcb24e70:
+        state: on
+        xy_color: [0.444, 0.517]
+        brightness: 255
+  - name: Living Room Gateway Orange
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_7811dcb24e70:
+        state: on
+        xy_color: [0.527, 0.447]
+        brightness: 255
+  - name: Living Room Gateway Red
+    icon: "mdi:flower-tulip"
+    entities:
+      light.gateway_light_7811dcb24e70:
+        state: on
+        xy_color: [0.701, 0.299]
+        brightness: 255

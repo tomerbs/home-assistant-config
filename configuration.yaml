@@ -1,37 +1,70 @@
-homeassistant:
-  name: !secret homeassistant name
-  temperature_unit: C
-  latitude: !secret homeassistant latitude
-  longitude: !secret homeassistant longitude
-  elevation: 56
-  unit_system: metric
-  time_zone: !secret homeassistant_time_zone
-  packages: !include_dir_named packages
-  customize: !include customize.yaml
-  customize_glob: !include customize_glob.yaml
 
-custom_updater:   # https://github.com/custom-components/custom_updater/wiki/Installation
-  track:
-    - components
-    - cards
-    - python_scripts
-  card_urls:
-    - https://raw.githubusercontent.com/custom-cards/tracker-card/master/tracker-card.json
-    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
-    - https://raw.githubusercontent.com/matisaul/vertical-style-card/master/tracker.json
-    - https://raw.githubusercontent.com/bramkragten/custom-ui/master/updater.json
-    - https://raw.githubusercontent.com/kuuji/button-card/0.0.2/tracker.json
-    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+lovelace:
+  mode: yaml
+  dashboards:
+    lovelace-generated: # Needs to contain a hyphen (-)
+      mode: yaml
+      filename: wallmount.yaml
+      title: WallMount
+      icon: mdi:television
+      show_in_sidebar: true
+      require_admin: true
+  resources:
+  - url: /hacsfiles/button-card/button-card.js
+    type: module
+  - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
+    type: module
+  - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
+    type: module
+  - url: /hacsfiles/custom-header/custom-header.js
+    type: module
+  - url: /hacsfiles/decluttering-card/decluttering-card.js
+    type: module
+  - url: /hacsfiles/group-card/group-card.js
+    type: module
+  - url: /hacsfiles/lovelace-card-mod/card-mod.js
+    type: module
+  - url: /hacsfiles/lovelace-more-info-card/more-info-card.js
+    type: module
+  - url: /hacsfiles/lovelace-fold-entity-row/fold-entity-row.js
+    type: js
+  - url: /hacsfiles/lovelace-gap-card/gap-card.js
+    type: module
+  - url: /hacsfiles/lovelace-layout-card/layout-card.js
+    type: js    
+  - url: /hacsfiles/lovelace-swipe-navigation/swipe-navigation.js
+    type: js    
+  - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
+    type: module
+  - url: /hacsfiles/swipe-card/swipe-card.js
+    type: module    
+  - url: /hacsfiles/vertical-stack-in-card/vertical-stack-in-card.js
+    type: js    
+  - url: /hacsfiles/light-popup-card/light-popup-card.js
+    type: module
+  - url: /hacsfiles/switch-popup-card/switch-popup-card.js
+    type: module
+  - url: /hacsfiles/weather-card/weather-card.js
+    type: module
+  - url: /hacsfiles/thermostat-popup-card/thermostat-popup-card.js
+    type: module
+  - url: /hacsfiles/media_player-popup-card/media_player-popup-card.js
+    type: module
   
-  show_installable: false  
-
 http:
-  base_url: !secret http_base_url
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
 
-zwave:
-  usb_path: /dev/ttyACM0
+panel_custom:
+  - name: zwavegraph2
+    sidebar_title: Z-Wave Graph
+    sidebar_icon: mdi:z-wave
+    url_path: zwave
+
+browser_mod:
 
 vacuum:
   - platform: xiaomi_miio
@@ -39,84 +72,63 @@ vacuum:
     host: !secret vacuum_ip
     token: !secret vacuum_token
 
-xiaomi_aqara:
-  discovery_retry: 5
-  gateways:
-    - mac: !secret xiaomi_aqara1_mac
-      key: !secret xiaomi_aqara1_key
-    - mac: !secret xiaomi_aqara2_mac
-      key: !secret xiaomi_aqara2_key
-
-owntracks:
-  max_gps_accuracy: 200
-  waypoints: True
-
 ifttt:
   key: !secret ifttt_key
 
-weather:
-  - platform: darksky
-    api_key: !secret weather_api_key
+mobile_app:
+
+bond:
+  host: !secret bond_ip 
+  token: !secret bond_token 
+
+frontend:
+  javascript_version: latest
+  themes: !include lovelace/configuration/themes.yaml 
+# Text to speech
+tts:
+  - platform: google_translate
+    service_name: google_say
+
+spotcast:
+  sp_dc: !secret spotcast_sp_dc
+  sp_key: !secret spotcast_sp_key
 
 remote:
   - platform: harmony
     name: Living Room
     host: !secret remote_host
+    
+panel_iframe:
+  tasmoadmin:
+    title: TasmoAdmin
+    icon: mdi:blur
+    url: !secret panel_iframe_url
 
-frontend:
-  javascript_version: latest
-  themes: !include_dir_merge_named themes/
-  extra_html_url:
-    - /local/custom_ui/state-card-custom-fanspeed.html
-  extra_html_url_es5:
-    - /local/custom_ui/state-card-custom-fanspeed.html
-  
-mqtt:
-  broker: !secret mqtt_ip
-  port: 1883
-  client_id: home-assistant-1
-  keepalive: 60
-  username: pi
-  password: !secret mqtt_password
+stream:
+ffmpeg:
 
-lovelace:
-  mode: yaml
+speedtestdotnet:
+  scan_interval:
+    minutes: 30
+  monitored_conditions:
+    - ping
+    - download
+    - upload
 
-config:
-updater:
-discovery:
-conversation:
-history:
-logbook:
-map:
-system_health:
-sun:
-  
-google_assistant:
-  project_id: !secret google_assistant_project_id
-  exposed_domains:
-    - switch
-    - light
-    - group
+smartir:
+  update_branch: rc
 
-####################################################
-#                                                  #
-#                    Includes                      #
-#                                                  #
-####################################################
-
-light: !include includes/lights.yaml
-zone: !include includes/zones.yaml  
-group: !include includes/groups.yaml
+light: !include lights.yaml
+scene: !include scenes.yaml
+group: !include groups.yaml
 automation: !include automations.yaml
-script: !include includes/scripts.yaml
-sensor: !include includes/sensors.yaml
-camera: !include includes/cameras.yaml
-media_player: !include includes/media_players.yaml
-switch: !include includes/switches.yaml
-binary_sensor: !include includes/binary_sensor.yaml
-fan: !include includes/fans.yaml
-climate: !include includes/climate.yaml
-input_select: !include includes/input_select.yaml
-input_boolean: !include includes/input_boolean.yaml
-input_number: !include includes/input_number.yaml
+script: !include scripts.yaml
+sensor: !include sensors.yaml
+camera: !include cameras.yaml
+media_player: !include media_players.yaml
+fan: !include fans.yaml
+climate: !include climate.yaml
+switch: !include switches.yaml
+input_select: !include input_select.yaml
+input_boolean: !include input_boolean.yaml
+input_number: !include input_number.yaml

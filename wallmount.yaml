@@ -1,487 +1,475 @@
-
+  
 popup_cards:
-  !include lovelace/popup_cards/popup_cards_mobile.yaml
+  !include lovelace/popup_cards/popup_cards_widescreen.yaml
 
+custom_header:
+  compact_mode: true
+  footer_mode: false
+  menu_hide: true
+  voice_hide: true
+  options_hide: true
+  elements_color: white
+  background: 'rgba(0, 0, 0, 0.6)'
+  x: 'var(--primary-color)'
+  
 # Decluttering Templates
 decluttering_templates: 
   !include lovelace/templates/decluttering_templates.yaml
- 
-custom_header: 
-  compact_mode: true
-  footer_mode: false
-  chevrons: false
-  menu_hide: true   
-  voice_hide: true   
-  options_hide: true
-  elements_color: white
-  background: 'rgba(0, 0, 0, 0.6)' 
-  x: 'var(--primary-color)'
 
 swipe_nav: 
   wrap: true
   prevent_default: true
-  swipe_amount: 15 
- 
+  swipe_amount: 15
+          
 title: Home
 views:
   - title: Home
     icon: mdi:home
     background: var(--background-image)
+    panel: true
     cards:
       - type: custom:layout-card
-        max_columns: 1
-        cards:                    
-          - type: horizontal-stack
+        layout: vertical
+        column_width: 100%
+        cards:
+          - type: custom:layout-card
+            layout: grid
+            gridrows: 40px 176px 176px 40px 106px 40px 20px 20px 20px
+            gridcols: 100px 475px 25px 475px 25px 475px 100px 
             cards:
-              - type: 'custom:button-card'
-                color_type: blank-card
-                styles: 
-                  card:
-                    - width: 5px 
-              - type: picture-elements
-                image: /local/images/trasperant.png 
-                elements: 
-                  # Image
-                  - type: image
-                    entity: device_tracker.sm_g960f 
-                    image: /local/images/tomer.png
-                    tap_action:
-                      action: more-info
-                    style:
-                      left: 50%
-                      top: 50%
-                      width: 100%
-                      heigth: 100%
-                    state_image: 
-                      "home": /local/images/tomer.png
-                      "away": /local/images/tomer_away.png
-                  # State Label Tomer
-                  - type: state-label
-                    entity: device_tracker.sm_g960f 
-                    style:    
-                      left: 0 
-                      bottom: 0
-                      pointer-events: none
-                      font-size: 14px
-                      font-family: Helvetica
-                      font-weight: bold
-                      line-height: 24px
-                      color: white
-                      width: 100%
-                      height: 100%
-                      transform: initial
-                      padding: 0 8px
-                  - type: state-label
-                    entity: sensor.seventeentrack_packages_in_transit
-                    style:
-                      top: 82%
-                      left: 15%
-                      pointer-events: none
-                      transform: initial
-                      font-size: 14px
-                      font-family: Helvetica
-                      font-weight: bold
-                      color: white
-                      line-height: 32px
-                  - type: icon
-                    icon: mdi:truck
-                    style:
-                      top: 85%
-                      left: 5%
-                      pointer-events: none
-                      transform: scale(0.8)   
-                      color: white
-                      line-height: 32px
-                  - type: state-label
-                    entity: sensor.sm_g960f_battery_level
-                    style:
-                      top: 72%
-                      left: 15%
-                      pointer-events: none
-                      transform: initial
-                      font-size: 14px
-                      font-family: Helvetica
-                      font-weight: bold
-                      color: white
-                      line-height: 32px
-                  - type: icon
-                    icon: mdi:battery-70
-                    style:
-                      top: 75%
-                      left: 3%
-                      pointer-events: none
-                      transform: scale(0.8)
-                      color: white
-                      line-height: 32px
-                style: |
-                  ha-card {
-                    border-radius: var(--border-radius);
-                    box-shadow: var(--box-shadow-active);
-                    background: var(--theme-main-color);
-                    overflow: hidden;
-                  }
-              - type: picture-elements
-                image: /local/images/trasperant.png
-                elements:
-                  # Image
-                  - type: image
-                    entity: device_tracker.sm_g965f
-                    image: /local/images/natali.png
-                    tap_action:
-                      action: more-info
-                    style:
-                      left: 50%
-                      top: 50%
-                      width: 100%
-                      heigth: 100%
-                    state_image:
-                      "home": /local/images/natali.png
-                      "away": /local/images/natali_away.png
-                  # State Label Natali
-                  - type: state-label
-                    entity: device_tracker.sm_g965f
-                    style:
-                      left: 0
-                      bottom: 0 
-                      pointer-events: none
-                      font-size: 14px
-                      font-family: Helvetica
-                      font-weight: bold
-                      line-height: 24px
-                      color: white
-                      width: 100%
-                      height: 100%
-                      transform: initial
-                      padding: 0 8px
-                  - type: state-label
-                    entity: sensor.seventeentrack_packages_in_transit
-                    style:
-                      top: 82%
-                      left: 15%
-                      pointer-events: none
-                      transform: initial
-                      font-size: 14px
-                      font-family: Helvetica
-                      font-weight: bold
-                      color: white
-                      line-height: 32px
-                  - type: icon
-                    icon: mdi:truck
-                    style:
-                      top: 85%
-                      left: 5% 
-                      pointer-events: none
-                      transform: scale(0.8)
-                      color: white 
-                      line-height: 32px
-                  - type: state-label
-                    entity: sensor.sm_g965f_battery_level
-                    style:
-                      top: 72%
-                      left: 15%
-                      pointer-events: none
-                      transform: initial
-                      font-size: 14px
-                      font-family: Helvetica
-                      font-weight: bold
-                      color: white
-                      line-height: 32px
-                  - type: icon
-                    icon: mdi:battery-70
-                    style:
-                      top: 75%
-                      left: 3%
-                      pointer-events: none
-                      transform: scale(0.8)
-                      color: white
-                      font-weight: bold
-                      line-height: 32px
-                style: |
-                  ha-card {
-                    border-radius: var(--border-radius);
-                    box-shadow: var(--box-shadow-active);
-                    background: var(--theme-main-color);
-                    overflow: hidden;
-                  } 
-              - type: 'custom:button-card'
-                color_type: blank-card
-                styles:
-                  card:      
-                    - width: 5px
-          - type: custom:decluttering-card
-            template: header_text
-            variables: 
-              - content: '##### Favorite Scenes'                   
-          - type: horizontal-stack 
-            cards:
-              - type: 'custom:button-card'
-                color_type: blank-card
-                styles:
-                  card:
-                    - width: 5px
-              - type: custom:swipe-card
-                card_width: '66%' 
-                start_card: 1
-                parameters:
-                  spaceBetween: 8 
-                  effect: 'flipEffect' 
-                  slidesPerView: 'auto' 
-                cards:                                  
-                  - type: custom:decluttering-card     
-                    template: scene-wide-button 
-                    variables: 
-                      - entity: script.good_morning_scene
-                      - name: Good Morning
-                      - entity_picture: /local/lovelace/apple_icons/good_morning.png
+              - type: custom:decluttering-card
+                template: header_text
+                variables:
+                  - content: '##### Persons'                
+                gridrow: 1 / 2
+                gridcol: 2 / 3
+                style: "ha-card { height: 100%; }"                
+              - type: horizontal-stack
+                cards:            
+                  - type: picture-elements
+                    image: /local/images/trasperant.png 
+                    elements:
+                      # Image
+                      - type: image
+                        entity: device_tracker.sm_g960f 
+                        image: /local/images/tomer.png
+                        tap_action:
+                          action: more-info
+                        style:
+                          left: 50%
+                          top: 50%
+                          width: 100%
+                          heigth: 100%
+                        state_image:
+                          "home": /local/images/tomer.png
+                          "away": /local/images/tomer_away.png
+                      # State Label Tomer
+                      - type: state-label
+                        entity: device_tracker.sm_g960f
+                        style:
+                          left: 0
+                          bottom: 0
+                          pointer-events: none
+                          font-size: 14px
+                          font-family: Helvetica
+                          font-weight: bold
+                          line-height: 24px
+                          color: white
+                          width: 100%
+                          height: 100%
+                          transform: initial
+                          padding: 0 8px
+                      - type: state-label
+                        entity: sensor.seventeentrack_packages_in_transit
+                        style:
+                          top: 82%
+                          left: 15%
+                          pointer-events: none
+                          transform: initial
+                          font-size: 14px
+                          font-family: Helvetica
+                          font-weight: bold
+                          color: white
+                          line-height: 32px
+                      - type: icon
+                        icon: mdi:truck
+                        style:
+                          top: 85%
+                          left: 5%
+                          pointer-events: none
+                          transform: scale(0.8)   
+                          color: white
+                          line-height: 32px
+                      - type: state-label
+                        entity: sensor.sm_g960f_battery_level
+                        style:
+                          top: 72%
+                          left: 15%
+                          pointer-events: none
+                          transform: initial
+                          font-size: 14px
+                          font-family: Helvetica
+                          color: white
+                          font-weight: bold
+                          line-height: 32px
+                      - type: icon
+                        icon: mdi:battery-70
+                        style:
+                          top: 75%
+                          left: 3%
+                          pointer-events: none
+                          transform: scale(0.8)
+                          color: white
+                          line-height: 32px
+                    style: |
+                      ha-card {
+                        border-radius: var(--border-radius);
+                        box-shadow: var(--box-shadow-active);
+                        background: var(--theme-main-color);
+                        overflow: hidden;
+                      }
+                  - type: picture-elements
+                    image: /local/images/trasperant.png 
+                    elements:
+                      # Image
+                      - type: image
+                        entity: device_tracker.sm_g965f 
+                        image: /local/images/natali.png
+                        tap_action:
+                          action: more-info
+                        style:
+                          left: 50%
+                          top: 50%
+                          width: 100%
+                          heigth: 100%
+                        state_image:
+                          "home": /local/images/natali.png
+                          "away": /local/images/natali_away.png
+                      # State Label Tomer
+                      - type: state-label
+                        entity: device_tracker.sm_g965f
+                        style:
+                          left: 0
+                          bottom: 0
+                          pointer-events: none
+                          font-size: 14px
+                          font-family: Helvetica
+                          font-weight: bold
+                          line-height: 24px
+                          color: white
+                          width: 100%
+                          height: 100%
+                          transform: initial
+                          padding: 0 8px
+                      - type: state-label
+                        entity: sensor.seventeentrack_packages_in_transit
+                        style:
+                          top: 82%
+                          left: 15%
+                          pointer-events: none
+                          transform: initial
+                          font-size: 14px
+                          font-family: Helvetica
+                          font-weight: bold
+                          color: white
+                          line-height: 32px
+                      - type: icon
+                        icon: mdi:truck
+                        style:
+                          top: 85%
+                          left: 5%
+                          pointer-events: none
+                          transform: scale(0.8)   
+                          color: white
+                          line-height: 32px
+                      - type: state-label
+                        entity: sensor.sm_g965f_battery_level
+                        style:
+                          top: 72%
+                          left: 15%
+                          pointer-events: none
+                          transform: initial
+                          font-size: 14px
+                          font-family: Helvetica
+                          color: white
+                          font-weight: bold
+                          line-height: 32px
+                      - type: icon
+                        icon: mdi:battery-70
+                        style:
+                          top: 75%
+                          left: 3%
+                          pointer-events: none
+                          transform: scale(0.8)
+                          color: white
+                          line-height: 32px
+                    style: |
+                      ha-card {
+                        border-radius: var(--border-radius);
+                        box-shadow: var(--box-shadow-active);
+                        background: var(--theme-main-color);
+                        overflow: hidden;
+                      }                       
+                gridrow: 2 / 3
+                gridcol: 2 / 2
+                style: "ha-card { height: 100%; }"                
+              - type: custom:decluttering-card
+                template: header_text
+                variables:
+                  - content: '##### Favorite' 
+                gridrow: 1 / 2
+                gridcol: 4 / 5
+                style: "ha-card { height: 100%; }"                
+              - type: horizontal-stack
+                cards:
                   - type: custom:decluttering-card
-                    template: scene-wide-button
+                    template: general-card  
                     variables:
-                      - entity: script.good_night_scene
-                      - name: Good Night
-                      - entity_picture: /local/lovelace/apple_icons/good_night.png
+                      - entity: sensor.current_lights_on
+                      - entity_picture: /local/lovelace/apple_icons/ceilin_light.png
+                      - name: Lights On 
                   - type: custom:decluttering-card 
-                    template: scene-wide-button    
+                    template: camera-card
                     variables:
-                      - entity: script.leave_home_scene
-                      - name: Leave Home
-                      - entity_picture: /local/lovelace/apple_icons/leave_home.png
+                      - entity: camera.outdoor
+                      - name: Security
+                      - entity_picture: /local/lovelace/apple_icons/camera.png
+                      - sensor: sensor.dark_sky_temperature
                   - type: custom:decluttering-card 
-                    template: scene-wide-button
+                    template: air-con-card
                     variables: 
-                      - entity: script.movie_time_scene 
-                      - name: Movie Time 
-                      - entity_picture: /local/lovelace/apple_icons/cinema2.png
-                  - type: custom:decluttering-card 
-                    template: scene-wide-button
+                      - entity: climate.air_condition 
+                      - name: Thermostat
+                      - sensor: climate.air_condition 
+                gridrow: 2 / 3
+                gridcol: 4 / 5
+                style: "ha-card { height: 100%; }"                
+              - type: horizontal-stack
+                cards:
+                  - type: custom:decluttering-card
+                    template: navigation-card
                     variables:
-                      - entity: script.party_time_scene
-                      - name: Party Time
-                      - entity_picture: /local/lovelace/apple_icons/party_time.png
-                  - type: custom:decluttering-card 
-                    template: alarm-scene-wide-button
+                      - entity: camera.outdoor
+                      - name: Media
+                      - entity_picture: /local/lovelace/apple_icons/music1.png
+                      - navigation_path: /lovelace/3
+                  - type: custom:decluttering-card
+                    template: navigation-card
                     variables:
-                      - entity: input_boolean.alarm_clock_status
-                      - name: Morning Alarm
-                      - entity_picture: /local/lovelace/apple_icons/morning_alarm.png
-              - type: 'custom:button-card' 
-                color_type: blank-card
-                styles:
-                  card:
-                    - width: 5px                              
-          - type: horizontal-stack
-            cards: 
-              - type: 'custom:button-card'
-                color_type: blank-card   
-                styles:  
-                  card:
-                    - width: 5px
+                      - entity: vacuum.xiaomi_vacuum_cleaner
+                      - name: Cleaning
+                      - entity_picture: /local/lovelace/apple_icons/robot_vacuum.png
+                      - sensor: sensor.vacuum_cleaner_fan_speed
+                      - navigation_path: /lovelace/4
+                  - type: custom:decluttering-card
+                    template: navigation-card
+                    variables:
+                      - entity: camera.outdoor
+                      - name: Settings
+                      - entity_picture: /local/lovelace/apple_icons/settings.png
+                      - navigation_path: /lovelace/5
+                gridrow: 3 / 4
+                gridcol: 4 / 5              
+                style: "ha-card { height: 100%; }"
               - type: custom:decluttering-card
-                template: general-card  
+                template: header_text
                 variables:
-                  - entity: sensor.current_lights_on
-                  - entity_picture: /local/lovelace/apple_icons/ceilin_light.png
-                  - name: Lights On 
-              - type: custom:decluttering-card 
-                template: camera-card
-                variables:
-                  - entity: camera.outdoor
-                  - name: Security
-                  - entity_picture: /local/lovelace/apple_icons/camera.png
-                  - sensor: sensor.dark_sky_temperature
-              - type: custom:decluttering-card 
-                template: air-con-card
+                  - content: '##### Weather'
+                gridrow: 1 / 3
+                gridcol: 6 / 7                  
+              - type: horizontal-stack
+                cards:
+                  - type: custom:weather-card
+                    entity: weather.home
+                    current: true
+                    details: false
+                    forecast: true
+                    style: |
+                      ha-card {
+                        --primary-text-color: var(--name-color-off);
+                        background: var(--theme-main-color);
+                        border-radius: var(--border-radius);
+                        box-shadow: var(--box-shadow-active);
+                        font-size: 13px;
+                        font-weight: bold;
+                        font-family: Helvetica;
+                        style: "ha-card { height: 50%; }"
+                      } 
+                gridrow: 2 / 3
+                gridcol: 6 / 7
+                style: "ha-card { height: 50%; }"
+                           
+              - type: horizontal-stack
+                cards:
+                  - type: custom:swipe-card
+                    card_width: '30%' 
+                    start_card: 1
+                    parameters:
+                      spaceBetween: 8 
+                      effect: 'flipEffect' 
+                      slidesPerView: 'auto' 
+                    cards:
+                      - type: custom:decluttering-card 
+                        template: scene-widescreen-button
+                        variables: 
+                          - entity: script.good_morning_scene
+                          - name: Good Morning
+                          - entity_picture: /local/lovelace/apple_icons/good_morning.png
+                      - type: custom:decluttering-card
+                        template: scene-widescreen-button
+                        variables:
+                          - entity: script.good_night_scene
+                          - name: Good Night
+                          - entity_picture: /local/lovelace/apple_icons/good_night.png     
+                      - type: custom:decluttering-card 
+                        template: scene-widescreen-button 
+                        variables:
+                          - entity: script.leave_home_scene
+                          - name: Leave Home
+                          - entity_picture: /local/lovelace/apple_icons/leave_home.png
+                      - type: custom:decluttering-card 
+                        template: scene-widescreen-button
+                        variables:
+                          - entity: script.movie_time_scene
+                          - name: Movie Time
+                          - entity_picture: /local/lovelace/apple_icons/cinema2.png
+                      - type: custom:decluttering-card 
+                        template: scene-widescreen-button
+                        variables:
+                          - entity: script.party_time_scene
+                          - name: Party Time
+                          - entity_picture: /local/lovelace/apple_icons/party_time.png
+                      - type: custom:decluttering-card 
+                        template: alarm-scene-widescreen-button
+                        variables: 
+                          - entity: input_boolean.alarm_clock_status
+                          - name: Morning Alarm
+                          - entity_picture: /local/lovelace/apple_icons/morning_alarm.png
+                gridrow: 4 / 5
+                gridcol: 2 / 7                
+                style: "ha-card { height: 100%; }"    
+              - type: custom:decluttering-card
+                template: header_text
                 variables: 
-                  - entity: climate.air_condition 
-                  - name: Thermostat
-                  - sensor: climate.air_condition
-                  - show_state: true                   
-              - type: 'custom:button-card'
-                color_type: blank-card
-                styles:
-                  card:
-                    - width: 5px
-          - type: horizontal-stack
-            cards:
-              - type: 'custom:button-card'
-                color_type: blank-card
-                styles:
-                  card:
-                    - width: 5px
-              - type: custom:decluttering-card
-                template: navigation-card
-                variables:
-                  - entity: camera.outdoor
-                  - name: Media
-                  - entity_picture: /local/lovelace/apple_icons/music1.png
-                  - navigation_path: /lovelace/3
-              - type: custom:decluttering-card
-                template: navigation-card
-                variables: 
-                  - entity: vacuum.xiaomi_vacuum_cleaner
-                  - name: Cleaning
-                  - entity_picture: /local/lovelace/apple_icons/robot_vacuum.png
-                  - sensor: sensor.vacuum_cleaner_fan_speed
-                  - navigation_path: /lovelace/4
-              - type: custom:decluttering-card
-                template: navigation-card
-                variables:
-                  - entity: camera.outdoor
-                  - name: Settings
-                  - entity_picture: /local/lovelace/apple_icons/settings.png
-                  - navigation_path: /lovelace/5
-              - type: 'custom:button-card'
-                color_type: blank-card
-                styles:
-                  card:
-                    - width: 5px
-          - type: custom:decluttering-card
-            template: header_text
-            variables:
-              - content: '##### Notifications and Events'
-          - type: horizontal-stack
-            cards:
-              - type: conditional
-                conditions:
-                  - entity: binary_sensor.door_window_sensor_158d00016cf3b7
-                    state: "off" 
-                  - entity: binary_sensor.neo_coolcam_door_sensor
-                    state: "off" 
-                card:
-                  type: vertical-stack
-                  cards:                
-                    - type: horizontal-stack
-                      cards:
-                        - type: 'custom:button-card'
-                          color_type: blank-card
-                          styles:
-                            card:
-                              - width: 5px
-                        - type: markdown
-                          style: |
-                            ha-card {
-                              --paper-card-background-color: var(--theme-main-color);
-                              border-radius: var(--border-radius);
-                              box-shadow: var(--box-shadow-active);
-                              font-size: 13px;
-                              font-family: Helvetica;
-                              font-weight: bold;
-                              color: white;
-                            }
-                          content: >
-                            Everything is quiet, there are no notifications
-                        - type: 'custom:button-card'
-                          color_type: blank-card
-                          styles:
-                            card:
-                              - width: 5px
-          - type: horizontal-stack
-            cards:
-              - type: conditional
-                conditions:
-                  - entity: binary_sensor.door_window_sensor_158d00016cf3b7
-                    state: "on"
-                  - entity: binary_sensor.neo_coolcam_door_sensor
-                    state: "off"
-                card:
-                  type: vertical-stack
-                  cards:                
-                    - type: horizontal-stack
-                      cards:
-                        - type: 'custom:button-card'
-                          color_type: blank-card
-                          styles:
-                            card:
-                              - width: 5px
-                        - type: markdown
-                          style: |
-                            ha-card {
-                              --paper-card-background-color: var(--conditional-warning-color);
-                              border-radius: var(--border-radius);
-                              box-shadow: var(--box-shadow-active);
-                              font-size: 13px;
-                              font-family: Helvetica;
-                              font-weight: bold;
-                              color: white;
-                            }
-                          content: >
-                            Front door is open
-                        - type: 'custom:button-card'
-                          color_type: blank-card
-                          styles:
-                            card:
-                              - width: 5px
-          - type: horizontal-stack
-            cards:
-              - type: conditional
-                conditions:
-                  - entity: binary_sensor.neo_coolcam_door_sensor
-                    state: "on"
-                  - entity: binary_sensor.door_window_sensor_158d00016cf3b7
-                    state: "off" 
-                card:
-                  type: vertical-stack
-                  cards:                
-                    - type: horizontal-stack
-                      cards:
-                        - type: 'custom:button-card'
-                          color_type: blank-card
-                          styles:
-                            card:
-                              - width: 5px
-                        - type: markdown
-                          style: |
-                            ha-card {
-                              --paper-card-background-color: var(--conditional-warning-color);
-                              border-radius: var(--border-radius);
-                              box-shadow: var(--box-shadow-active);
-                              font-size: 13px;
-                              font-family: Helvetica;
-                              font-weight: bold;
-                              color: white;
-                            }
-                          content: >
-                            Gate is open
-                        - type: 'custom:button-card'
-                          color_type: blank-card
-                          styles:
-                            card:
-                              - width: 5px                              
-          - type: horizontal-stack
-            cards:
-              - type: conditional
-                conditions:
-                  - entity: binary_sensor.neo_coolcam_door_sensor
-                    state: "on"
-                  - entity: binary_sensor.door_window_sensor_158d00016cf3b7
-                    state: "on" 
-                card:
-                  type: vertical-stack
-                  cards:                
-                    - type: horizontal-stack
-                      cards:
-                        - type: 'custom:button-card'
-                          color_type: blank-card
-                          styles:
-                            card:
-                              - width: 5px
-                        - type: markdown
-                          style: |
-                            ha-card {
-                              --paper-card-background-color: var(--conditional-warning-color);
-                              border-radius: var(--border-radius);
-                              box-shadow: var(--box-shadow-active);
-                              font-size: 13px;
-                              font-family: Helvetica;
-                              color: white;
-                            }
-                          content: >
-                            Front Door and Gate are open
-                        - type: 'custom:button-card'
-                          color_type: blank-card
-                          styles:
-                            card:
-                              - width: 5px
-
+                  - content: '##### Notifications and Events'
+                gridrow: 6 / 7
+                gridcol: 2 / 7
+                style: "ha-card { height: 100%; }"
+              - type: horizontal-stack
+                cards:
+                  - type: conditional
+                    conditions:
+                      - entity: binary_sensor.door_window_sensor_158d00016cf3b7
+                        state: "off" 
+                      - entity: binary_sensor.neo_coolcam_door_sensor
+                        state: "off"
+                    card:
+                      type: vertical-stack
+                      cards:                
+                        - type: horizontal-stack
+                          cards:
+                            - type: markdown
+                              style: |
+                                ha-card {
+                                  --paper-card-background-color: var(--theme-main-color);
+                                  border-radius: var(--border-radius);
+                                  box-shadow: var(--box-shadow-active);
+                                  font-size: 13px;
+                                  font-family: Helvetica;
+                                  font-weight: bold;
+                                  color: white;
+                                }
+                              content: >
+                                Everything is quiet, there are no notifications
+                gridrow: 7 / 8
+                gridcol: 2 / 7
+                style: "ha-card { height: 100%; }"
+              - type: horizontal-stack
+                cards:
+                  - type: conditional
+                    conditions:
+                      - entity: binary_sensor.door_window_sensor_158d00016cf3b7
+                        state: "on"
+                      - entity: binary_sensor.neo_coolcam_door_sensor
+                        state: "off"
+                    card:
+                      type: vertical-stack
+                      cards:                
+                        - type: horizontal-stack
+                          cards:
+                            - type: markdown
+                              style: |
+                                ha-card {
+                                  --paper-card-background-color: var(--conditional-warning-color);
+                                  border-radius: var(--border-radius);
+                                  box-shadow: var(--box-shadow-active);
+                                  font-size: 13px;
+                                  font-family: Helvetica;
+                                  font-weight: bold;
+                                  color: white;
+                                }
+                              content: >
+                                Front door is open
+                gridrow: 7 / 8
+                gridcol: 2 / 7
+                style: "ha-card { height: 100%; }"
+              - type: horizontal-stack
+                cards:
+                  - type: conditional
+                    conditions:
+                      - entity: binary_sensor.neo_coolcam_door_sensor
+                        state: "on"
+                      - entity: binary_sensor.door_window_sensor_158d00016cf3b7
+                        state: "off"
+                    card:
+                      type: vertical-stack
+                      cards:                
+                        - type: horizontal-stack
+                          cards:
+                            - type: markdown
+                              style: |
+                                ha-card {
+                                  --paper-card-background-color: var(--conditional-warning-color);
+                                  border-radius: var(--border-radius);
+                                  box-shadow: var(--box-shadow-active);
+                                  font-size: 13px;
+                                  font-family: Helvetica;
+                                  font-weight: bold;
+                                  color: white;
+                                }
+                              content: >
+                                Gate is open              
+                gridrow: 7 / 8
+                gridcol: 2 / 7
+                style: "ha-card { height: 100%; }"
+              - type: horizontal-stack
+                cards:
+                  - type: conditional
+                    conditions:
+                      - entity: binary_sensor.door_window_sensor_158d00016cf3b7
+                        state: "on" 
+                      - entity: binary_sensor.neo_coolcam_door_sensor
+                        state: "on"
+                    card:
+                      type: vertical-stack
+                      cards:                
+                        - type: horizontal-stack
+                          cards:
+                            - type: markdown
+                              style: |
+                                ha-card {
+                                  --paper-card-background-color: var(--conditional-warning-color);
+                                  border-radius: var(--border-radius);
+                                  box-shadow: var(--box-shadow-active);
+                                  font-size: 13px;
+                                  font-family: Helvetica;
+                                  color: white;
+                                }
+                              content: > 
+                                Front Door and Gate are open
+                gridrow: 7 / 8
+                gridcol: 2 / 7
+                style: "ha-card { height: 100%; }"                 
 
 ######################################################################################
 #                                        ROOMS                                       #
@@ -493,8 +481,8 @@ views:
     panel: true
     cards:
       - type: custom:layout-card
-        max_columns: 1
-        layout: horizontal
+        min_columns: 3
+        max_columns: 3
         cards:
           - type: vertical-stack
             cards:
@@ -507,7 +495,7 @@ views:
                   - type: 'custom:button-card'
                     color_type: blank-card
                     styles:
-                      card: 
+                      card:
                         - width: 5px
                   - type: custom:decluttering-card 
                     template: light_button_card
@@ -526,7 +514,7 @@ views:
                   - type: custom:decluttering-card
                     template: light_button_card              
                     variables:
-                      - entity: light.tv_backlight
+                      - entity: light.tv_backlight 
                       - name: TV Backlight
                       - entity_picture: /local/lovelace/apple_icons/led_strip1.png
                       - sensor: sensor.tv_backlight_light_status
@@ -571,7 +559,7 @@ views:
               - type: custom:decluttering-card
                 template: header_text
                 variables:
-                  - content: '##### Kitchen'             
+                  - content: '##### Kitchen'              
               - type: horizontal-stack
                 cards:
                   - type: 'custom:button-card'
@@ -618,12 +606,14 @@ views:
                       - entity: binary_sensor.door_window_sensor_158d0001a1f88b
                       - name: Cabinet Sensor
                       - icon: motion-sensor
-                      - sensor: sensor.cabinet_sensor_battery
+                      - sensor: sensor.air_condition_sensor_battery
                   - type: custom:decluttering-card
                     template: door-windows-sensor-card
                     variables:
                       - entity: binary_sensor.door_window_sensor_158d00016cf3b7
                       - name: Front Door
+                      - icon: motion-sensor
+                      - entity_picture: /local/lovelace/buttons/homekit/wall_light.png
                       - sensor: sensor.entrance_sensor_battery
                   - type: 'custom:button-card'
                     color_type: blank-card
@@ -655,8 +645,8 @@ views:
                   - type: custom:decluttering-card
                     template: animation-button-card 
                     variables:
-                      - entity: fan.bond_master_bedroom_fan 
-                      - name: M.Bed Fan
+                      - entity: fan.m_bedroom_fan
+                      - name: M.Bedroom Fan
                       - entity_picture_on: /local/lovelace/apple_icons/fan.gif
                       - entity_picture_off: /local/lovelace/apple_icons/fan_off.png
                       - sensor: sensor.natali_bed_light_status
@@ -756,7 +746,7 @@ views:
                   - type: custom:decluttering-card
                     template: animation-button-card
                     variables:
-                      - entity: fan.lian_ifan 
+                      - entity: fan.lian_ifan
                       - name: Lians Fan
                       - entity_picture_on: /local/lovelace/apple_icons/fan.gif
                       - entity_picture_off: /local/lovelace/apple_icons/fan_off.png
@@ -804,16 +794,16 @@ views:
           - type: vertical-stack
             cards:
               - type: custom:decluttering-card
-                template: header_text  
+                template: header_text
                 variables:
                   - content: '##### Orins Room'              
               - type: horizontal-stack
                 cards:
                   - type: 'custom:button-card'
                     color_type: blank-card
-                    styles: 
+                    styles:
                       card:
-                        - width: 5px   
+                        - width: 5px
                   - type: custom:decluttering-card 
                     template: light_button_card              
                     variables:
@@ -949,34 +939,33 @@ views:
                   - type: 'custom:button-card'
                     color_type: blank-card
                     styles:
-                      card: 
+                      card:
                         - width: 5px
                   - type: custom:decluttering-card
                     template: light_button_card              
                     variables:
-                      - entity: switch.tkb_front_porch
+                      - entity: switch.fibaro_front_porch_lights
                       - name: Front Porch
                       - entity_picture: /local/lovelace/apple_icons/spot_light_1.png
                       - sensor: sensor.front_porch_lights_status
                   - type: custom:decluttering-card
                     template: light_button_card              
                     variables:
-                      - entity: switch.tkb_garden_lights 
+                      - entity: switch.fibaro_garden_lights
                       - name: Garden
                       - entity_picture: /local/lovelace/apple_icons/garden_spotlight_1.png
                       - sensor: sensor.garden_lights_status
                   - type: custom:decluttering-card
-                    template: animation-button-card
-                    variables: 
+                    template: speaker-status-card
+                    variables:
                       - entity: switch.outdoor_speakers
                       - name: Speakers
-                      - entity_picture_on: /local/lovelace/apple_icons/speaker.gif
-                      - entity_picture_off: /local/lovelace/apple_icons/speaker_off.png
+                      - entity_picture: /local/lovelace/apple_icons/speaker.png
                       - sensor: sensor.outdoor_speakers_status
                   - type: 'custom:button-card'
                     color_type: blank-card
                     styles:
-                      card: 
+                      card:
                         - width: 5px
               - type: horizontal-stack
                 cards:
@@ -986,7 +975,7 @@ views:
                       card:
                         - width: 5px
                   - type: custom:decluttering-card
-                    template: camera-card           
+                    template: camera-card
                     variables:
                       - entity: camera.outdoor
                       - name: Outdoor
@@ -999,28 +988,10 @@ views:
                       - name: Roof Fan
                       - entity_picture_on: /local/lovelace/apple_icons/roof_fan.gif
                       - entity_picture_off: /local/lovelace/apple_icons/roof_fan_off.png
-                      - sensor: sensor.roof_sensor_for_button                   
-                  - type: custom:decluttering-card
-                    template: door-windows-sensor-card
-                    variables:
-                      - entity: binary_sensor.neo_coolcam_door_sensor
-                      - name: Gate
-                      - sensor: sensor.shenzhen_neo_electronics_co_ltd_door_window_detector_battery_level
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px
-              - type: horizontal-stack
-                cards:
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px
+                      - sensor: sensor.roof_sensor_for_button             
                   - type: custom:decluttering-card
                     template: leakage-sensor-card
-                    variables: 
+                    variables:
                       - entity: sensor.neo_coolcam_water_leakage_sensor
                       - name: Water Sensor
                       - entity_picture_on: /local/lovelace/apple_icons/faucet.gif
@@ -1028,50 +999,29 @@ views:
                       - sensor: sensor.shenzhen_neo_electronics_co_ltd_water_leakage_detector_battery_level
                   - type: 'custom:button-card' 
                     color_type: blank-card
-                  - type: 'custom:button-card' 
-                    color_type: blank-card
-                  - type: 'custom:button-card' 
-                    color_type: blank-card
-                    styles: 
-                      card:
-                        - width: 5px             
-              - type: horizontal-stack
-                cards:                   
-                  - type: 'custom:button-card'
-                    color_type: blank-card
                     styles:
                       card:
-                        - width: 5px 
-                  - type: custom:decluttering-card
-                    template: wide-spacer-card
-                    variables:
-                      - entity: sensor.dummy_spacer
-                      - name: Dummy 
-                      - entity_picture: /local/lovelace/apple_icons/dummy_spacer.png
-                      - sensor: sensor.dummy_spacer 
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px                          
+                        - width: 5px                  
+                        
 #################################################################
 #                                                               #
-#                        Mutlimedia                            #
+#                        Living Room                            #
 #                                                               #
 #################################################################
 
-  - title: Multimedia
+  - title: Living Room
     icon: mdi:sofa 
     background: var(--background-image)
     panel: true
     cards:
       - type: custom:layout-card
-        max_columns: 1
+        min_columns: 3
+        max_columns: 3
         cards:        
           - type: custom:decluttering-card
             template: header_text
             variables:
-              - content: '##### Multimedia'
+              - content: '##### Living Room'              
           - type: horizontal-stack
             cards:    
               - type: 'custom:button-card'
@@ -1080,17 +1030,17 @@ views:
                   card: 
                     - width: 5px 
               - type: custom:decluttering-card
-                template: harmony_media-button-card              
+                template: harmony_media-button-card 
                 variables:
                   - entity: input_boolean.remote_livingroom_harmony_poweroff
                   - entity_picture: /local/lovelace/apple_icons/power1.png
               - type: custom:decluttering-card
-                template: harmony_media-button-card              
+                template: harmony_media-button-card 
                 variables:
                   - entity: input_boolean.remote_livingroom_harmony_watch_tv
                   - entity_picture: /local/lovelace/apple_icons/television.png
               - type: custom:decluttering-card 
-                template: harmony_media-button-card              
+                template: harmony_media-button-card 
                 variables:
                   - entity: input_boolean.remote_livingroom_harmony_playstation4
                   - entity_picture: /local/lovelace/apple_icons/playstation1.png
@@ -1099,10 +1049,13 @@ views:
                 styles:
                   card:
                     - width: 5px
+          - type: custom:gap-card
+            height: <50>
+            size: <50>
           - type: custom:decluttering-card
             template: header_text
             variables:
-              - content: '##### Light and AC'
+              - content: '##### Lights and AC'
           - type: horizontal-stack 
             cards:
               - type: 'custom:button-card'
@@ -1220,7 +1173,7 @@ views:
                   - entity: input_boolean.remote_livingroom_harmony_watch_tv
                     state: "on"
                 card:
-                  type: vertical-stack 
+                  type: vertical-stack  
                   cards:
                     - type: custom:decluttering-card
                       template: header_text
@@ -1231,14 +1184,14 @@ views:
                         - type: 'custom:button-card'
                           color_type: blank-card
                           styles:
-                            card: 
-                              - width: 5px 
+                            card:
+                              - width: 5px
                         - type: custom:decluttering-card
                           template: remote-card
                           variables:
-                            - entity: script.tv_remote_menu 
-                            - entity_picture: /local/lovelace/apple_icons/streamer_remote.png
-                            - name: Remote                      
+                            - entity: script.yes_remote_menu 
+                            - entity_picture: /local/lovelace/apple_icons/yes_remote.png
+                            - name: Yes Remote
                         - type: custom:decluttering-card
                           template: remote-card
                           variables:
@@ -1246,13 +1199,13 @@ views:
                             - entity_picture: /local/lovelace/apple_icons/fix.png
                             - name: Fix Watch TV 
                         - type: 'custom:button-card'
-                          color_type: blank-card                             
+                          color_type: blank-card                            
                         - type: 'custom:button-card'
                           color_type: blank-card
                           styles:
-                            card: 
-                              - width: 5px 
-                              
+                            card:
+                              - width: 5px            
+                                      
 #################################################################
 #                    Playstation Activity                       #
 #################################################################
@@ -1316,9 +1269,7 @@ views:
     panel: true
     cards:
       - type: custom:layout-card
-        min_columns: 1   
-        max_columns: 1
-        layout: horizontal
+        min_columns: 3
         cards:
           - type: vertical-stack
             cards:
@@ -1347,27 +1298,27 @@ views:
                       - name: Play Radio
                       - entity_picture: /local/lovelace/apple_icons/ceilin_light.png
                       - sensor: script.play_radio_menu
-                  - type: custom:decluttering-card
-                    template: animation-button-card
-                    variables: 
-                      - entity: switch.outdoor_speakers
-                      - name: Speakers
-                      - entity_picture_on: /local/lovelace/apple_icons/speaker.gif
-                      - entity_picture_off: /local/lovelace/apple_icons/speaker_off.png
-                      - sensor: sensor.outdoor_speakers_status
+                  - type: 'custom:button-card'
+                    color_type: blank-card
                   - type: 'custom:button-card'
                     color_type: blank-card
                     styles:
                       card:
                         - width: 5px
+              - type: horizontal-stack
+                cards:                        
+                  - type: custom:decluttering-card
+                    template: wide-spacer-card
+                    variables:
+                      - content: '#####  '
           - type: vertical-stack
-            cards:        
+            cards:
               - type: custom:decluttering-card
                 template: header_text
                 variables:
-                  - content: '##### Speakers'              
+                  - content: '##### Speakers'
               - type: horizontal-stack
-                cards:            
+                cards:                
                   - type: 'custom:button-card'
                     color_type: blank-card
                     styles:
@@ -1375,7 +1326,7 @@ views:
                         - width: 5px
                   - type: custom:mini-media-player
                     entity: media_player.all_speakers 
-                    icon: 'mdi:google-home'
+                    icon: 'mdi:surround-sound'
                     artwork: cover
                     power_state: true
                     style: |
@@ -1387,21 +1338,9 @@ views:
                         font-weight: bold;
                         font-family: Helvetica;
                       }
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px
-              - type: horizontal-stack
-                cards:            
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px
                   - type: custom:mini-media-player
                     entity: media_player.kitchen
-                    icon: 'mdi:google-home'
+                    icon: 'mdi:surround-sound'
                     artwork: cover
                     power_state: true
                     style: |
@@ -1427,7 +1366,7 @@ views:
                         - width: 5px            
                   - type: custom:mini-media-player
                     entity: media_player.living_room
-                    icon: 'mdi:google-home'
+                    icon: 'mdi:surround-sound'
                     artwork: cover
                     power_state: true
                     style: |
@@ -1438,22 +1377,10 @@ views:
                         font-size: 13px;
                         font-weight: bold;
                         font-family: Helvetica;
-                      }
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px
-              - type: horizontal-stack
-                cards:
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px            
+                      }          
                   - type: custom:mini-media-player
                     entity: media_player.bathroom
-                    icon: 'mdi:google-home'
+                    icon: 'mdi:surround-sound'
                     artwork: cover
                     power_state: true
                     style: |
@@ -1479,7 +1406,7 @@ views:
                         - width: 5px            
                   - type: custom:mini-media-player
                     entity: media_player.master_bedroom
-                    icon: 'mdi:google-home'
+                    icon: 'mdi:surround-sound'
                     artwork: cover
                     power_state: true
                     style: |
@@ -1490,22 +1417,10 @@ views:
                         font-size: 13px;
                         font-weight: bold;
                         font-family: Helvetica;
-                      }
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px                        
-              - type: horizontal-stack
-                cards:
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px            
+                      }           
                   - type: custom:mini-media-player
                     entity: media_player.lians_room
-                    icon: 'mdi:google-home'
+                    icon: 'mdi:surround-sound'
                     artwork: cover
                     power_state: true
                     style: |
@@ -1531,7 +1446,7 @@ views:
                         - width: 5px            
                   - type: custom:mini-media-player
                     entity: media_player.orins_room
-                    icon: 'mdi:google-home'
+                    icon: 'mdi:surround-sound'
                     artwork: cover
                     power_state: true
                     style: |
@@ -1542,22 +1457,10 @@ views:
                         font-size: 13px;
                         font-weight: bold;
                         font-family: Helvetica;
-                      }
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px
-              - type: horizontal-stack
-                cards:
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px            
+                      }            
                   - type: custom:mini-media-player
                     entity: media_player.ellas_room
-                    icon: 'mdi:google-home'
+                    icon: 'mdi:surround-sound'
                     artwork: cover
                     power_state: true
                     style: |
@@ -1587,14 +1490,14 @@ views:
     panel: true
     cards:
       - type: custom:layout-card
-        max_columns: 1 
+        max_columns: 3
         layout: vertical
         cards:
           - type: custom:decluttering-card
             template: header_text
             variables:
               - content: '##### Vacuum Cleaner'              
-          - type: horizontal-stack 
+          - type: horizontal-stack
             cards:              
               - type: 'custom:button-card'
                 color_type: blank-card
@@ -1602,30 +1505,66 @@ views:
                   card:
                     - width: 5px
               - type: picture-elements
-                image: /local/lovelace/vacuum/xiaomi_vacuum_clean_small.gif             
+                image: /local/lovelace/vacuum/xiaomi_vacuum_clean.gif
                 elements:
-                  - type: image
+                  - type: icon
+                    icon: mdi:bell-ring
+                    tap_action:
+                      action: call-service
+                      service_data:
+                        entity_id: vacuum.xiaomi_vacuum_cleaner
+                      service: vacuum.locate
+                    style:
+                      top: 86%
+                      left: 85%
+                      color: 'var(--name-color-off)'
+                  - type: icon
+                    icon: mdi:home
+                    tap_action:
+                      action: call-service
+                      service_data:
+                        entity_id: vacuum.xiaomi_vacuum_cleaner
+                      service: vacuum.return_to_base
+                    style:
+                      top: 86%
+                      left: 67%
+                      color: 'var(--name-color-off)'                
+                  - type: icon
+                    icon: mdi:pause
                     entity: vacuum.xiaomi_vacuum_cleaner
                     tap_action:
-                      action: more-info
-                    hold_action: 
-                      action: more-info
-                    image: /local/images/trasperant.png              
+                      action: call-service
+                      service_data:
+                        entity_id: vacuum.xiaomi_vacuum_cleaner
+                      service: vacuum.pause
                     style:
-                      top: 5%
-                      left: 19%
-                      width: 26%
-                  - type: image
+                      top: 86%
+                      left: 49%
+                      color: 'var(--name-color-off)'                      
+                  - type: icon
+                    icon: mdi:play
+                    entity_id: vacuum.xiaomi_vacuum_cleaner
+                    tap_action:
+                      action: call-service
+                      service_data:
+                        entity_id: vacuum.xiaomi_vacuum_cleaner
+                      service: vacuum.start
+                    style:
+                      top: 86% 
+                      left: 31%
+                      color: 'var(--name-color-off)'                       
+                  - type: icon
+                    icon: mdi:stop
                     entity: vacuum.xiaomi_vacuum_cleaner
                     tap_action:
-                      action: more-info
-                    hold_action: 
-                      action: more-info
-                    image: /local/images/trasperant.png              
+                      action: call-service
+                      service_data:
+                        entity_id: vacuum.xiaomi_vacuum_cleaner
+                      service: vacuum.stop
                     style:
-                      top: 5%
-                      left: 86%
-                      width: 24%
+                      top: 86%
+                      left: 13%
+                      color: 'var(--name-color-off)'
                   - type: state-label
                     entity: sensor.vacuum_lovelace_status
                     prefix: 'Status: '
@@ -1637,9 +1576,9 @@ views:
                       pointer-events: none
                       font-family: Helvetica
                       font-size: 14px
-                      font-weight: bold  
+                      font-weight: bold
                   - type: state-label
-                    entity: sensor.vacuum_status
+                    entity: sensor.vacuum_lovelace_battery
                     prefix: 'Battery: '
                     style:
                       top: 13%
@@ -1650,76 +1589,6 @@ views:
                       font-family: Helvetica
                       font-size: 14px
                       font-weight: bold
-                  - type: icon
-                    icon: mdi:stop
-                    entity: vacuum.xiaomi_vacuum_cleaner
-                    tap_action:
-                      action: call-service
-                      service_data:
-                        entity_id: vacuum.xiaomi_vacuum_cleaner
-                      service: vacuum.stop
-                    style: 
-                      top: 86%
-                      left: 12%
-                      color: 'var(--name-color-off)'
-                  - type: icon
-                    icon: mdi:play
-                    entity_id: vacuum.xiaomi_vacuum_cleaner
-                    tap_action:
-                      action: call-service
-                      service_data:
-                        entity_id: vacuum.xiaomi_vacuum_cleaner
-                      service: vacuum.start
-                    style:
-                      top: 86% 
-                      left: 27%
-                      color: 'var(--name-color-off)'
-                  - type: icon
-                    icon: mdi:pause
-                    entity: vacuum.xiaomi_vacuum_cleaner
-                    tap_action:
-                      action: call-service
-                      service_data:
-                        entity_id: vacuum.xiaomi_vacuum_cleaner
-                      service: vacuum.pause
-                    style:
-                      top: 86%
-                      left: 42%
-                      color: 'var(--name-color-off)'
-                  - type: icon
-                    icon: mdi:map-marker
-                    entity: vacuum.xiaomi_vacuum_cleaner
-                    tap_action:
-                      action: call-service
-                      service_data:
-                        entity_id: vacuum.xiaomi_vacuum_cleaner
-                      service: vacuum.clean_spot
-                    style:
-                      top: 86%
-                      left: 57%
-                      color: 'var(--name-color-off)'
-                  - type: icon
-                    icon: mdi:home
-                    tap_action:
-                      action: call-service
-                      service_data:
-                        entity_id: vacuum.xiaomi_vacuum_cleaner
-                      service: vacuum.return_to_base
-                    style:
-                      top: 86%
-                      left: 72%
-                      color: 'var(--name-color-off)'                      
-                  - type: icon
-                    icon: mdi:bell-ring 
-                    tap_action:
-                      action: call-service
-                      service_data:
-                        entity_id: vacuum.xiaomi_vacuum_cleaner
-                      service: vacuum.locate
-                    style:
-                      top: 86%
-                      left: 87%
-                      color: 'var(--name-color-off)'
                 style: |
                   ha-card {
                     background: var(--theme-main-color);
@@ -1731,7 +1600,7 @@ views:
                 styles:
                   card:
                     - width: 5px
-          - type: horizontal-stack     
+          - type: horizontal-stack
             cards:              
               - type: 'custom:button-card'
                 color_type: blank-card
@@ -1745,17 +1614,17 @@ views:
                 show_name: true
                 color_type: card
                 color: auto 
-                name: Choose Room to Clean  
+                name: Choose Room to Clean
                 tap_action:
                   action: more-info
                   haptic: light
                 hold_action:
-                  action: more-info
-                  haptic: heavy    
+                  action: more-info     
+                  haptic: heavy
                 show_entity_picture: true
                 entity_picture: /local/lovelace/apple_icons/room_clean.png
                 styles:
-                  card:  
+                  card:
                     - background: var(--theme-main-color)
                     - border-radius: var(--border-radius)
                     - box-shadow: var(--box-shadow-active)                      
@@ -1765,21 +1634,21 @@ views:
                     - font-size: 14px
                     - font-family: Helvetica 
                     - font-weight: bold
-                    - padding-right: 150px
+                    - padding-right: 280px
                   icon:
                     - margin-left: -20%                              
               - type: 'custom:button-card'
                 color_type: blank-card
                 styles:
                   card:
-                    - width: 5px   
+                    - width: 5px 
           - type: horizontal-stack
             cards:
               - type: 'custom:button-card'
                 color_type: blank-card
                 styles:
                   card:  
-                    - width: 5px     
+                    - width: 5px 
               - type: custom:decluttering-card
                 template: sensor-card
                 variables:
@@ -1792,7 +1661,7 @@ views:
                 variables:
                   - entity: sensor.vacuum_cleaner_area_cleaned
                   - name: Area Cleaned
-                  - entity_picture: /local/lovelace/apple_icons/area_cleaned.png
+                  - entity_picture: /local/lovelace/apple_icons/clean.png
                   - sensor: sensor.vacuum_cleaner_area_cleaned
               - type: custom:decluttering-card
                 template: sensor-card
@@ -1819,9 +1688,10 @@ views:
     panel: true
     cards:
       - type: custom:layout-card
-        max_columns: 1  
+        min_columns: 3
+        max_columns: 3
         layout: horizontal
-        cards:
+        cards:             
           - type: vertical-stack
             cards:
               - type: custom:decluttering-card
@@ -1832,18 +1702,18 @@ views:
                 cards:
                   - type: 'custom:button-card'
                     color_type: blank-card
-                    styles: 
-                      card:  
+                    styles:
+                      card:
                         - width: 5px 
                   - type: custom:decluttering-card
                     template: input-boolean-button-card
                     variables:  
                       - entity: input_boolean.alarm_clock_status
                       - name: Toggle Alarm
-                      - entity_picture: /local/lovelace/apple_icons/morning_alarm.png
+                      - entity_picture: /local/lovelace/apple_icons/alarm_clock.png
                       - sensor: sensor.alarm_clock_time_long 
                   - type: custom:decluttering-card
-                    template: more_info_button 
+                    template: more_info_button
                     variables:
                       - entity: input_boolean.alarm_clock_status
                       - name: Set Alarm
@@ -1851,11 +1721,11 @@ views:
                       - sensor: sensor.alarm_clock_time_long
                   - type: custom:decluttering-card
                     template: input-boolean-button-card
-                    variables:   
+                    variables:
                       - entity: input_boolean.alarmweekday
                       - name: Only Weekday
                       - entity_picture: /local/lovelace/apple_icons/calandar.png
-                      - sensor: input_boolean.alarmweekday 
+                      - sensor: input_boolean.alarmweekday
                   - type: 'custom:button-card'
                     color_type: blank-card
                     styles:
@@ -1865,7 +1735,7 @@ views:
             cards:
               - type: custom:decluttering-card
                 template: header_text
-                variables: 
+                variables:
                   - content: '##### HA Status'
               - type: horizontal-stack 
                 cards:                  
@@ -1920,10 +1790,6 @@ views:
                       - name2: Restart
                       - entity_picture: /local/lovelace/apple_icons/restart.png                      
                       - service_entity: homeassistant.restart
-                      - lock: 
-                          enabled: true
-                          unlock: double_tap
-                          duration: 2
                   - type: custom:decluttering-card
                     template: service-button-card
                     variables: 
@@ -1931,17 +1797,13 @@ views:
                       - name2: Reboot
                       - entity_picture: /local/lovelace/apple_icons/reboot.png                      
                       - service_entity: hassio.host_reboot
-                      - lock: 
-                          enabled: true
-                          unlock: double_tap
-                          duration: 2
                   - type: custom:decluttering-card
                     template: service-button-card
-                    variables: 
-                      - name: Smartir
+                    variables:
+                      - name: Smartir Addon
                       - name2: Update
                       - entity_picture: /local/lovelace/apple_icons/smartir.png                      
-                      - service_entity: smartir.update_component
+                      - service_entity: smartir.check_updates
                   - type: 'custom:button-card'
                     color_type: blank-card
                     styles:
@@ -2020,7 +1882,7 @@ views:
                 variables:
                   - content: '##### Raspberry Pi Status' 
               - type: horizontal-stack
-                cards:       
+                cards:
                   - type: 'custom:button-card'
                     color_type: blank-card
                     styles:
@@ -2092,7 +1954,7 @@ views:
                     color_type: blank-card
                     styles:
                       card:
-                        - width: 5px
+                        - width: 5px 
                   - type: custom:decluttering-card
                     template: sensor-card
                     variables:
@@ -2128,7 +1990,7 @@ views:
                   - type: 'custom:button-card'
                     color_type: blank-card
                     styles:
-                      card:
+                      card: 
                         - width: 5px
               - type: horizontal-stack
                 cards:
@@ -2178,7 +2040,7 @@ views:
                 template: header_text
                 variables:
                   - content: '##### All Scripts'                        
-              - type: horizontal-stack 
+              - type: horizontal-stack
                 cards:
                   - type: 'custom:button-card'
                     color_type: blank-card
@@ -2201,7 +2063,7 @@ views:
                       haptic: heavy    
                     show_entity_picture: true
                     entity_picture: /local/lovelace/apple_icons/scripts.png
-                    styles:
+                    styles: 
                       card:
                         - background: var(--theme-main-color)
                         - border-radius: var(--border-radius)
@@ -2220,22 +2082,3 @@ views:
                     styles:
                       card:
                         - width: 5px
-              - type: horizontal-stack
-                cards:                   
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px 
-                  - type: custom:decluttering-card
-                    template: wide-spacer-card
-                    variables:
-                      - entity: sensor.dummy_spacer
-                      - name: Ping 
-                      - entity_picture: /local/lovelace/apple_icons/dummy_spacer.png
-                      - sensor: sensor.dummy_spacer 
-                  - type: 'custom:button-card'
-                    color_type: blank-card
-                    styles:
-                      card:
-                        - width: 5px                      

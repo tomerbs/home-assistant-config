@@ -1,0 +1,73 @@
+
+  - platform: mqtt
+    name: "Lian Ifan Light"
+    command_topic: "cmnd/Lian-Ifan03/power"
+    state_topic: "stat/Lian-Ifan03/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic: false
+  - platform: mqtt
+    name: "Orins Ifan Light"
+    command_topic: "cmnd/Orin-Ifan03/power"
+    state_topic: "stat/Orin-Ifan03/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+  - platform: mqtt
+    name: "Ela IFan Light"
+    command_topic: "cmnd/Ela-Ifan03/power"
+    state_topic: "stat/Ela-Ifan03/POWER1"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+  - platform: mqtt
+    name: "Natali Bed Light"
+    command_topic: "cmnd/Natali_Bedroom_Lamp/power"
+    state_topic: "stat/Natali_Bedroom_Lamp/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+  - platform: mqtt
+    name: "Tomer Bed Light"
+    command_topic: "cmnd/Tomer_Bedroom_Lamp/power"
+    state_topic: "stat/Tomer_Bedroom_Lamp/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+  - platform: mqtt
+    name: "Cabinet"
+    command_topic: "cmnd/Temperature/power"
+    state_topic: "stat/Temperature/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+  - platform: mqtt
+    name: "TV BackLight"
+    command_topic: "cmnd/TV_Light/power"
+    state_topic: "stat/TV_Light/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+  - platform: mqtt
+    name: "Computer BackLight"
+    command_topic: "cmnd/Computer_backlight/power"
+    state_topic: "stat/Computer_backlight/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+  - platform: mqtt
+    name: "Orin Flower Light"
+    command_topic: "cmnd/Orin_flower_Lamp/power"
+    state_topic: "stat/Orin_flower_Lamp/POWER"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+  - platform: template
+    lights:
+      master_bedroom_light:
+        friendly_name: "Master Bedroom Light"
+        turn_on:
+          service: script.master_bedroom_fan_light
+        turn_off:
+          service: script.master_bedroom_fan_light

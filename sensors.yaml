@@ -1,0 +1,598 @@
+  - platform: yr
+    name: CPU
+
+  - platform: uptime 
+    unit_of_measurement: days
+
+  - platform: time_date
+    display_options:
+      ['time', 'date']
+
+  - platform: rpi_power
+    text_state: true
+ 
+  - platform: systemmonitor
+    resources:
+
+      - type: disk_use_percent
+        arg: /
+      - type: memory_use_percent
+      - type: last_boot
+      - type: processor_use
+
+  - platform: version
+    name: Current version
+
+  - platform: version
+    name: Latest version
+    beta: true
+    image: raspberrypi3
+    source: hassio
+      
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'time_date'
+      - 'time_utc'
+      - 'beat'
+    
+  - platform: template
+    sensors:
+
+      alarm_clock_hour:
+        value_template: '{{ states.input_number.alarm_clock_hour.state | int }}'
+      alarm_clock_minute:
+        value_template: '{{ states.input_number.alarm_clock_minute.state | int }}'
+      alarm_clock_time:
+        friendly_name: 'Time'
+        value_template: >-
+          {{ states.sensor.alarm_clock_hour.state }}:
+          {%- if states.sensor.alarm_clock_minute.state|length == 1 -%}
+            0
+          {%- endif -%}
+            {{ states.sensor.alarm_clock_minute.state }}
+      alarm_clock_time_long:
+        value_template: >-
+          {% if states.sensor.alarm_clock_hour.state|length == 1 -%}
+            0
+          {%- endif -%}
+            {{ states.sensor.alarm_clock_hour.state }}:
+          {%- if states.sensor.alarm_clock_minute.state|length == 1 -%}
+            0
+          {%- endif -%}
+            {{ states.sensor.alarm_clock_minute.state }}
+            
+      roof_sensor_for_button:
+        friendly_name: 'Roof Sensor For Button'
+        value_template: "Temp: {{ states('sensor.roof_fan_temperature') }}"
+
+      current_activity:
+        friendly_name: 'Current Activity'
+        value_template: '{{ states.remote.living_room.attributes.current_activity }}'
+      day:
+        entity_id: sensor.date
+        value_template: >
+          {% set days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] %}
+          {{ days[now().weekday()] }}
+
+      rpi_power_template:
+        friendly_name: Power Supply
+        icon_template: 'mdi:raspberry-pi'
+        value_template: >-
+          {% if states('sensor.rpi_power_status') == 'Everything is working as intended' %}
+            Works well
+          {% else %}
+            {{ states('sensor.rpi_power_status') }}
+          {% endif %}
+      
+      living_room_light_status:
+        friendly_name: "Living Room Light Status"
+        value_template: >-
+          {% if is_state('switch.tkb_living_room', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+      dining_room_light_status:
+        friendly_name: "Dining Room Light Status"
+        value_template: >-
+          {% if is_state('switch.fibaro_dining_room', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+      tv_backlight_light_status:
+        friendly_name: "Tv Backlight Status"
+        value_template: >-
+          {% if is_state('light.tv_backlight', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+      computer_backlight_light_status:
+        friendly_name: "Computer Backlight Status"
+        value_template: >-
+          {% if is_state('light.computer_backlight', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}          
+      kitchen_sink_light_status:
+        friendly_name: "Kitchen Sink"
+        value_template: >-
+          {% if is_state('switch.fibaro_kitchen_sink', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+      kitchen_stove_light_status:
+        friendly_name: "Kitchen Stove"
+        value_template: >-
+          {% if is_state('switch.fibaro_kitchn_stove', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+      bar_lights_status:
+        friendly_name: "Bar Lights Status"
+        value_template: >-
+          {% if is_state('switch.fibaro_bar_lights', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+      laundry_lights_status:
+        friendly_name: "Laundry Lights Status"
+        value_template: >-
+          {% if is_state('switch.fibaro_laundry_room', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+      bathroomy_lights_status:
+        friendly_name: "Bathroom Lights Status"
+        value_template: >-
+          {% if is_state('switch.fibaro_bathroom', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+      hallway_lights_status:
+        friendly_name: "Hallway Lights Status"
+        value_template: >-
+          {% if is_state('switch.tkb_hallway', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+      front_porch_lights_status:
+        friendly_name: "Front Porch Lights Status"
+        value_template: >-
+          {% if is_state('switch.fibaro_front_porch_lights', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+      garden_lights_status:
+        friendly_name: "Garden Lights Status"
+        value_template: >-
+          {% if is_state('switch.fibaro_garden_lights', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+
+      outdoor_speakers_status:
+        friendly_name: "Outdoor Speakers Status"
+        value_template: >-
+          {% if is_state('switch.outdoor_speakers', 'off') %}
+            Not Playing
+          {% else %}
+            Playing Music
+          {% endif %}
+
+      lian_light_ifan03_status:
+        friendly_name: "Lian iFan03 Light Status"
+        value_template: >-
+          {% if is_state('light.lian_ifan_light', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+
+      natali_bed_light_status:
+        friendly_name: "Natali Bed Light Status"
+        value_template: >-
+          {% if is_state('light.natali_bed_light', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+
+      tomer_bed_light_status:
+        friendly_name: "Tomer Bed Light Status"
+        value_template: >-
+          {% if is_state('light.tomer_bed_light', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+
+      lians_room_light_status:
+        friendly_name: "Lians room Light Status"
+        value_template: >-
+          {% if is_state('light.lians_ifan_light', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+
+      lians_desk_lamp_status:
+        friendly_name: "Lians Desk Lamp Status"
+        value_template: >-
+          {% if is_state('switch.lians_desk_lamp', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+
+      orins_room_light_status:
+        friendly_name: "Orins room Light Status"
+        value_template: >-
+          {% if is_state('light.orins_ifan_light', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+
+      orins_desk_lamp_status:
+        friendly_name: "Orins Desk Lamp Status"
+        value_template: >-
+          {% if is_state('switch.orin_desk_lamp', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+
+      orins_flower_light_status:
+        friendly_name: "Orins Flower Light Status"
+        value_template: >-
+          {% if is_state('light.orin_flower_light', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+
+      master_bedroom_gateway_lamp_status:
+        friendly_name: "M.Bedroom Gateway Lamp Status"
+        value_template: >-
+          {% if is_state('light.gateway_light_34ce00fb6e68', 'on') %} {{ (state_attr('light.gateway_light_34ce00fb6e68', 'brightness') / 2.54) | round }}{% endif %}
+        unit_of_measurement: "%"
+
+      master_bedroom_gateway_lamp_status_in_percentage:
+        friendly_name: "M.Bedroom Gateway Lamp Status in Percentage"
+        value_template: >-
+            {% if is_state('light.gateway_light_34ce00fb6e68', 'off') %}
+              0%
+            {% else %}
+              {{ states('sensor.master_bedroom_gateway_lamp_status') }}%
+            {% endif %}       
+        
+      livingroom_gateway_lamp_status:
+        friendly_name: "Living Room Gateway Lamp Status"
+        value_template: >-
+          {% if is_state('light.gateway_light_7811dcb24e70', 'on') %} {{ (state_attr('light.gateway_light_7811dcb24e70', 'brightness') / 2.54) | round }}{% endif %}
+        unit_of_measurement: "%"
+
+      livingroom_gateway_lamp_status_in_percentage:
+        friendly_name: "Living Room Gateway Lamp Status in Percentage"
+        value_template: >-
+            {% if is_state('light.gateway_light_7811dcb24e70', 'off') %}
+              0%
+            {% else %}
+              {{ states('sensor.livingroom_gateway_lamp_status') }}%
+            {% endif %}
+        
+      elas_room_light_status:
+        friendly_name: "Elas room Light Status"
+        value_template: >-
+          {% if is_state('light.ela_ifan_light', 'off') %}
+            0%
+          {% else %}
+            100%
+          {% endif %}
+
+      lian_fan_speed_status:
+        friendly_name: "Lian Fan Speed Status"
+        value_template: "{{ states.fan.lian_ifan.attributes.speed }}"
+        
+      lian_fan_speed_status_fronend:
+        friendly_name: "Lian FanSpeed Status Fronend"
+        value_template: >-
+          {% if is_state('sensor.lian_fan_speed_status', 'low') %}
+            Speed: Low
+          {% elif is_state('sensor.lian_fan_speed_status', 'medium') %}
+            Speed: Medium            
+          {% elif is_state('sensor.lian_fan_speed_status', 'high') %}
+            Speed: High
+          {% else %}
+            Speed: Off
+          {% endif %}        
+
+      orin_fan_speed_status:
+        friendly_name: "Orin Fan Speed Status"
+        value_template: "{{ states.fan.orin_ifan.attributes.speed }}"
+        
+      orin_fan_speed_status_fronend:
+        friendly_name: "Orin FanSpeed Status Fronend"
+        value_template: >-
+          {% if is_state('sensor.orin_fan_speed_status', 'low') %}
+            Speed: Low
+          {% elif is_state('sensor.orin_fan_speed_status', 'medium') %}
+            Speed: Medium            
+          {% elif is_state('sensor.orin_fan_speed_status', 'high') %}
+            Speed: High       
+          {% else %}
+            Speed: Off
+          {% endif %}        
+
+      ela_fan_speed_status:
+        friendly_name: "Ela Fan Speed Status"
+        value_template: "{{ states.fan.ela_ifan.attributes.speed }}"
+        
+      ela_fan_speed_status_fronend:
+        friendly_name: "Ela FanSpeed Status Fronend"
+        value_template: >-
+          {% if is_state('sensor.ela_fan_speed_status', 'low') %}
+            Speed: Low
+          {% elif is_state('sensor.ela_fan_speed_status', 'medium') %}
+            Speed: Medium            
+          {% elif is_state('sensor.ela_fan_speed_status', 'high') %}
+            Speed: High
+          {% else %}
+            Speed: Off
+          {% endif %}        
+
+      neo_coolcam_water_leakage_sensor:
+        friendly_name: "Neo Coolcam Water Leakage Sensor"
+        value_template: >-
+          {% if is_state('binary_sensor.shenzhen_neo_electronics_co_ltd_water_leakage_detector_sensor', 'off') %}
+            No Leakage
+          {% else %}
+            Leakage Detected
+          {% endif %}    
+      neo_coolcam_door_window_sensor:
+        friendly_name: "Neo Coolcam Door Windows Sensor"
+        value_template: >-
+          {% if is_state('binary_sensor.neo_coolcam_door_sensor', 'off') %}
+            Closed
+          {% else %}
+            Open
+          {% endif %}
+
+      vacuum_lovelace_status:
+        friendly_name: "Vacuum - Lovelace Status"
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.status }}"
+        icon_template: >-
+          {% if is_state('sensor.robovac_status', 'Cleaning') %}
+            mdi:robot-vacuum
+          {% elif is_state('sensor.robovac_status', 'Returning home') %}
+            mdi:home
+          {% elif is_state('sensor.robovac_status', 'Charging') %}
+            mdi:battery-charging-wireless
+          {% elif is_state('sensor.robovac_status', 'Idle') %}
+            mdi:sleep
+          {% elif is_state('sensor.robovac_status', 'Error') %}
+            mdi:alert
+          {% elif is_state('sensor.robovac_status', 'Charger disconnected') %}
+            mdi:power-plug-off
+          {% else %}
+            mdi:help-circle
+          {% endif %}
+      vacuum_choose_room_to_clean:
+        friendly_name: "Choose Room"
+        value_template: >-
+          {% if is_state('binary_sensor.shenzhen_neo_electronics_co_ltd_water_leakage_detector_sensor', 'off') %}
+            
+          {% else %}
+            
+          {% endif %}
+      vacuum_status:
+        friendly_name: "Vacuum - Status"
+        device_class: battery
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.battery_level }}%"
+      vacuum_cleaner_main_brush_cleaning_time:
+        friendly_name: "Cleaning Time"
+        unit_of_measurement: "Mins"
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.cleaning_time }}"
+      vacuum_cleaner_main_brush:
+        friendly_name: "Main Brush"
+        unit_of_measurement: "Hrs"
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.main_brush_left }}"
+      vacuum_cleaner_side_brush:
+        friendly_name: "Side Brush"
+        unit_of_measurement: "Hrs"
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.side_brush_left }}"
+      vacuum_cleaner_filter:
+        friendly_name: "Filter"
+        unit_of_measurement: "Hrs"
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.filter_left }}"
+      vacuum_cleaner_cleaning_count:
+        friendly_name: "Cleaning Count"
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.cleaning_count }}"
+      vacuum_cleaner_fan_speed:
+        friendly_name: "Fan Speed"
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.fan_speed }}"
+      vacuum_cleaner_area_cleaned:
+        friendly_name: "Area of Last Cycle"
+        unit_of_measurement: 'm ²'
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.cleaned_area }}"
+      vacuum_clean_sensors:
+        friendly_name: Sensors
+        unit_of_measurement: 'Hrs'
+        value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.sensor_dirty_left }}"
+### ZWAVE
+      zwave_neo_coolcam_water_leakage_detector_battery:
+        friendly_name: "Water Leakage Battery"
+        unit_of_measurement: '%'
+        device_class: battery
+        value_template: "{{ states.zwave.shenzhen_neo_electronics_co_ltd_water_leakage_detector.attributes.battery_level }}"
+
+# GATEWAY
+      cabinet_sensor_battery:
+        friendly_name: "Cabinet Sensor Battery"
+        unit_of_measurement: '%'
+        device_class: battery
+        value_template: "{{ states.binary_sensor.door_window_sensor_158d0001a1f88b.attributes.battery_level }}"
+      entrance_sensor_battery:
+        friendly_name: "Entrance Sensor Battery"
+        unit_of_measurement: '%'
+        device_class: battery
+        value_template: "{{ states.binary_sensor.door_window_sensor_158d00016cf3b7.attributes.battery_level }}"
+      air_condition_sensor_battery:
+        friendly_name: "Air Condition Battery"
+        unit_of_measurement: '%'
+        device_class: battery
+        value_template: "{{ states.binary_sensor.door_window_sensor_158d000395642c.attributes.battery_level }}"
+      lians_motion_sensor_battery:
+        friendly_name: "Lians Motion Sensor Battery"
+        unit_of_measurement: '%'
+        device_class: battery
+        value_template: "{{ states.binary_sensor.motion_sensor_158d0001a1f1ff.attributes.battery_level }}"
+      lians_button_switch_battery:
+        friendly_name: "Lians Button Switch Battery"
+        unit_of_measurement: '%'
+        device_class: battery
+        value_template: "{{ states.binary_sensor.switch_158d0001f9f305.attributes.battery_level }}"
+
+      current_lights_on:
+        friendly_name: All Lights Currently On
+        unit_of_measurement: 'On'
+        value_template: >
+          {% set total = 0 %}
+          {% if is_state('light.cabinet', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('light.computer_backlight', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('light.gateway_light_34ce00fb6e68', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('light.gateway_light_7811dcb24e70', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('light.lians_ifan_light', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('light.ela_ifan_light', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('light.orins_ifan_light', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('light.natali_bed_light', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.orin_desk_lamp', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('light.orin_flower_light', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('light.tomer_bed_light', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('light.tv_backlight', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.fibaro_laundry_room', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.fibaro_kitchn_stove', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.fibaro_bbq_area', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.fibaro_dining_room', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.fibaro_bathroom', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.fibaro_bar_lights', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.fibaro_garden_left', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.fibaro_kitchen_sink', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.tkb_living_room', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {% if is_state('switch.tkb_hallway', 'on') %}
+            {% set total = total + 1 %}
+          {% endif %}
+          {{total}}
+      
+  - platform: command_line
+    name: CPU Temp
+    command: "cat /sys/class/thermal/thermal_zone0/temp"
+    unit_of_measurement: "°C"
+    value_template: '{{ value | multiply(0.001) | round(0) }}'
+  - platform: mqtt
+    name: "Home Temperature"
+    state_topic: "tele/Temperature/SENSOR"
+    value_template: "{{ value_json['AM2301'].Temperature }}"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: "Roof Fan Temperature"
+    state_topic: "tele/Roof_Fan/SENSOR"
+    value_template: "{{ value_json['AM2301'].Temperature }}"
+    unit_of_measurement: "°C"
+
+### SONOFF POW ###
+  - platform: mqtt
+    name: "Master Bedroom TV Voltage"
+    state_topic: "tele/Master_Bedroom_TV/SENSOR"
+    value_template: '{{ value_json.ENERGY.Voltage }}'
+    unit_of_measurement: "V"
+  - platform: mqtt
+    name: "Master Bedroom TV Current"
+    state_topic: "tele/Master_Bedroom_TV/SENSOR"
+    value_template: '{{ value_json.ENERGY.Current }}'
+    unit_of_measurement: "A"
+  - platform: mqtt
+    name: "Master Bedroom TV Power"
+    state_topic: "tele/Master_Bedroom_TV/SENSOR"
+    value_template: '{{ value_json.ENERGY.Power }}'
+    unit_of_measurement: "W"    
+  - platform: mqtt
+    name: "Master Bedroom TV Apparent Power"
+    state_topic: "tele/Master_Bedroom_TV/SENSOR"
+    value_template: '{{ value_json.ENERGY.ApparentPower }}'
+    unit_of_measurement: "VA"
+  - platform: mqtt
+    name: "Master Bedroom TV Reactive Power"
+    state_topic: "tele/Master_Bedroom_TV/SENSOR"
+    value_template: '{{ value_json.ENERGY.ReactivePower }}'
+    unit_of_measurement: "VAr"
+  - platform: mqtt
+    name: "Master Bedroom TV Power Factor"
+    state_topic: "tele/Master_Bedroom_TV/SENSOR"
+    value_template: '{{ value_json.ENERGY.Factor }}'
+    unit_of_measurement: "A"
+  - platform: broadlink
+    host: 10.0.0.37
+    mac: 34:ea:34:d0:a9:4e
+    monitored_conditions:
+      - 'temperature'
+      
+  - platform: seventeentrack
+    username: tomerbf@gmail.com
+    password: classic052

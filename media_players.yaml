@@ -1,0 +1,6 @@
+
+  - platform: smartir
+    name: Broadlink TV
+    unique_id: broadlink_tv
+    device_code: 1000
+    controller_data: 10.0.0.37
