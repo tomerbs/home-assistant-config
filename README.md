@@ -24,3 +24,7 @@ Fans popup:
 AC popup:
 
 <img src="https://github.com/tomerbs/home-assistant-config/blob/master/Pictures/Popup AC.PNG" style="max-width:100%;">
+
+Spotcast popup
+
+<img src="https://github.com/tomerbs/home-assistant-config/blob/master/Pictures/Popup AC.PNG" style="max-width:100%;">
