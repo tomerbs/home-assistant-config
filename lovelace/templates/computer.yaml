@@ -1,0 +1,108 @@
+default:
+  - size: 30%
+  - lock: true
+  - color: auto
+  - height: 106px
+  - spin: false
+  - show_state: true
+  - show_label: true
+  - show_last_changed: false
+  - tap_action: toggle
+  - hold_action: more-info
+  - aspect_ratio: 1/1
+card:
+  type: custom:button-card
+  name: '[[name]]'
+  deep_press: true
+  show_entity_picture: true
+  entity_picture: '[[entity_picture]]'
+  height: 106px
+  size: '[[size]]'
+  color: '[[color]]'
+  lock:
+    enabled: true
+    unlock: tap
+    duration: 2
+  aspect_ratio: '[[aspect_ratio]]'
+  entity: '[[entity]]'
+  show_state: '[[show_state]]'
+  show_label: '[[show_label]]'
+  show_last_changed: '[[show_last_changed]]'
+  tap_action:
+    action: '[[tap_action]]'
+    haptic: light 
+  hold_action:
+    action: '[[hold_action]]'
+    haptic: heavy
+  styles:
+    card:
+      - border-radius: var(--border-radius)
+    label:
+      - font-size: 5px
+      - font-family: Helvetica
+      - font-weight: bold
+      - padding: 0px 12px
+      - justify-self: start
+    state:
+      - font-size: 14px
+      - font-family: Helvetica
+      - font-weight: bold
+      - padding: 0px 5px
+      - justify-self: start
+      - text-transform: capitalize
+      - padding-left: 5px
+    grid:
+      - grid-template-areas: '"i" "n" "s" "l"'
+      - grid-template-columns: 1fr
+      - grid-template-rows: 1fr min-content min-content
+    img_cell:
+      - align-self: start
+      - text-align: start
+      - margin-right: 60px
+    name:
+      - font-size: 14px
+      - font-family: Helvetica
+      - font-weight: bold
+      - justify-self: start
+      - padding-left: 5px
+  state:
+    - value: "on" 
+      spin: '[[spin]]'  
+      styles:
+        card:
+          - --ha-card-background: var(--homekit-card-on)
+          - box-shadow: var(--box-shadow-active)
+        icon:
+          - color: var(--primary-color)          
+        name:
+          - color: var(--name-color-on)
+        state:
+          - color: var(--state-color-on)
+        lock:
+          - color: var(--lock-color-on)
+        label:
+          - color: var(--label-color-on)
+    - value: "off"
+      styles:
+        card:
+          - --paper-card-background-color: var(--theme-main-color)
+          - box-shadow: var(--box-shadow-active)
+        icon:
+          - filter: grayscale(90%)
+        name:
+          - color: var(--name-color-off)
+        state:
+          - color: var(--state-color-off)
+        lock:
+          - color: var(--lock-color-off)
+        label:
+          - color: var(--label-color-off)
+    - value: "unavailable"
+      styles:
+        card:
+          - --paper-card-background-color: var(--theme-main-color)
+          - box-shadow: var(--box-shadow-active)
+          - color: var(--disabled-text-color)
+        icon:
+          - filter: contrast(30%)
+          - --paper-item-icon-color: var(--disabled-text-color)

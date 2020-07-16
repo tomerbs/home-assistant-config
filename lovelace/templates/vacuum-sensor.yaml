@@ -1,0 +1,65 @@
+default:
+  - size: 30%
+  - lock: false
+  - color: auto
+  - height: 106px
+  - spin: false
+  - show_state: true
+  - show_label: true
+  - show_last_changed: false
+  - tap_action: toggle
+  - hold_action: more-info
+  - aspect_ratio: 1/1
+card:
+  type: custom:button-card
+  name: '[[name]]'
+  deep_press: true
+  show_entity_picture: true
+  entity_picture: '[[entity_picture]]'
+  height: '[[height]]'
+  size: '[[size]]'
+  color: '[[color]]'
+  lock: '[[lock]]'
+  aspect_ratio: '[[aspect_ratio]]'
+  entity: '[[entity]]'
+  label: >
+    [[[
+      var bri = states['[[sensor]]'].state;
+    ]]]    
+  show_state: '[[show_state]]'
+  show_label: '[[show_label]]'
+  show_last_changed: '[[show_last_changed]]' 
+  styles:
+    card:
+      - border-radius: var(--border-radius)
+      - box-shadow: var(--box-shadow-active)
+    label:
+      - font-size: 14px
+      - font-family: Helvetica
+      - font-weight: bold
+      - padding: 0px 5px
+      - justify-self: start
+    state:
+      - color: 'var(--state-color-on)'
+      - font-size: 14px
+      - font-family: Helvetica
+      - font-weight: bold
+      - padding: 0px 5px
+      - justify-self: start
+      - text-transform: capitalize
+      - padding-left: 5px
+    grid:
+      - grid-template-areas: '"i" "n" "s" "l"'
+      - grid-template-columns: 1fr
+      - grid-template-rows: 1fr min-content min-content
+    img_cell:
+      - align-self: start
+      - text-align: start
+      - margin-right: 60px
+    name:
+      - font-size: 14px
+      - font-family: Helvetica
+      - font-weight: bold
+      - color: 'var(--name-color-on)'
+      - justify-self: start
+      - padding-left: 5px

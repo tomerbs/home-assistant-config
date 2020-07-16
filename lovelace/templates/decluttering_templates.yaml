@@ -1,0 +1,58 @@
+header_text:
+  !include header.yaml
+light_button_card:
+  !include light.yaml
+motion-sensor-card:
+  !include motion-sensor.yaml
+air-con-card:  
+  !include air-con.yaml
+animation-button-card:   
+  !include animation.yaml
+scene-button-card:   
+  !include scene.yaml
+harmony_media-button-card:
+  !include harmony_media-button-card.yaml
+input-boolean-button-card:
+  !include input-boolean.yaml
+more_info_button:
+  !include more_info_button.yaml
+remote-button-card:  
+  !include remote-buttons.yaml
+vacuum-sensor-card: 
+  !include vacuum-sensor.yaml
+sensor-card:   
+  !include sensor.yaml
+speaker-status-card:   
+  !include speaker.yaml
+leakage-sensor-card:
+  !include leakage-sensor.yaml
+door-windows-sensor-card:
+  !include door-windows-sensor.yaml
+camera-card:  
+  !include camera.yaml
+general-card:  
+  !include general.yaml
+navigation-card:  
+  !include navigation.yaml
+computer-card:  
+  !include computer.yaml
+wide-spacer-card:  
+  !include wide_spacer.yaml
+button-spacer-card:  
+  !include button_spacer.yaml
+remote-card:  
+  !include remote.yaml
+scene-wide-button:
+  !include scene-wide-button.yaml
+alarm-scene-wide-button:
+  !include alarm-‏‏scene-wide-button.yaml
+scene-widescreen-button:
+  !include scene-widescreen-button.yaml
+alarm-scene-widescreen-button:
+  !include alarm-‏‏scene-widescreen-button.yaml
+living-room-fix-script-buttons:
+  !include living_room_fix_script_buttons.yaml
+service-button-card:
+  !include service_button.yaml
+air_condition_card:
+  !include air_condition_button.yaml

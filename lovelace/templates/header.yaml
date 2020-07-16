@@ -1,0 +1,11 @@
+
+card:
+  type: markdown
+  style: |
+    ha-card {
+      box-shadow: none;
+      height: 33px;
+      background: rgba(0,0,0,0.0);
+      color: white;
+    }
+  content: '[[content]]'

@@ -1,0 +1,105 @@
+# Background
+background-image: 'center / cover repeat-x url("/local/images/night.jpg") fixed'
+# Custom Cards
+border-radius: '12px'
+border-radius2: '35px'
+homekit-card-on: 'rgba(255, 255, 255, 0.9)'
+name-color-on: 'black'
+state-color-on: 'black'
+lock-color-on: 'black'
+label-color-on: 'grey'
+name-color-off: 'grey'
+state-color-off: 'grey'
+lock-color-off: 'grey'
+label-color-off: 'grey'
+unavailable-color: 'black'
+box-shadow-active: "0px 0px 0px rgba(0,0,0,0)"
+box-shadow-notactive: "0px 0px 0px rgba(0,0,0,0)"
+
+# Main colors
+# https://www.color-hex.com/color/5294e2
+primary-color: '#5294E2'                                                        # Header
+accent-color: '#E45E65'                                                         # Accent color
+dark-primary-color: 'var(--accent-color)'                                       # Hyperlinks                                         
+light-primary-color: 'var(--accent-color)'                                      # Horizontal line in about
+ha-card-border-radius: '12px'
+
+# Text colors                                                                  
+primary-text-color: '#FFFFFF'                                                   # Primary text colour, here is referencing dark-primary-color
+text-primary-color: 'var(--primary-text-color)'                                 # Primary text colour
+#  secondary-text-color: '#5294E2'                                                 # For secondary titles in more info boxes etc.
+secondary-text-color: '#74a9e7'                                                 # For secondary titles in more info boxes etc.
+disabled-text-color: '#7F848E'                                                  # Disabled text colour
+label-badge-border-color: 'green'                                               # Label badge border, just a reference value   
+
+# Background colors                                                            
+#  primary-background-color: '#383C45'                                             # Settings background
+homekit-white: 'rgb(255, 255, 255, 0.9)'
+mini-media-player-base-color: 'var(--name-color-off)'
+primary-background-color: '#4b4f57'                                          # Settings background
+secondary-background-color: 'var(--homekit-white)'                                      # Main card UI background  
+divider-color: 'rgba(0, 0, 0, .12)'                                             # Divider 
+
+# Nav Menu                                                                   
+paper-listbox-color: 'var(--primary-color)'                                     # Navigation menu selection hoover
+paper-listbox-background-color: 'var(--homekit-white)'                                      # Navigation menu background
+paper-grey-50: 'var(--primary-text-color)'                                   
+paper-grey-200: '#414A59'                                                       # Navigation menu selection
+sidebar-icon-color: 'var(--primary-color)' 
+
+# Paper card                                                               
+paper-card-header-color: 'var(--accent-color)'                                  # Card header text colour
+paper-card-background-color: 'rgba(150, 150, 150, 0.1)'                         # Card background colour
+paper-dialog-background-color: '#434954'                                        # Card dialog background colour
+paper-item-icon-color: 'var(--primary-text-color)'                              # Icon color
+paper-item-icon-active-color: '#F9C536'                                         # Icon color active
+paper-item-icon_-_color: 'green'           
+paper-item-selected_-_background-color: '#434954'                               # Popup item select                      
+paper-tabs-selection-bar-color: 'green'
+card-background-color: 'var(--paper-card-background-color)'
+  
+# Labels 
+label-badge-red: 'var(--accent-color)'                                          # References the brand colour label badge border
+label-badge-text-color: 'var(--primary-text-color)'                             # Now same as label badge border but that's a matter of taste
+label-badge-background-color: 'var(--homekit-white)'                                         # Same, but can also be set to transparent here
+label-badge-background: 'var(--homekit-white)'
+
+# Switches
+paper-toggle-button-checked-button-color: 'var(--accent-color)'
+paper-toggle-button-checked-bar-color: 'var(--accent-color)'
+paper-toggle-button-checked-ink-color: 'var(--accent-color)'
+paper-toggle-button-unchecked-button-color: 'var(--disabled-text-color)'
+paper-toggle-button-unchecked-bar-color: 'var(--disabled-text-color)'
+paper-toggle-button-unchecked-ink-color: 'var(--disabled-text-color)'  
+
+# Sliders
+paper-slider-knob-color: '#0179d8'
+paper-slider-knob-start-color: '#0179d8'
+paper-slider-pin-color: '#0179d8'
+paper-slider-active-color: '#0179d8'
+paper-slider-container-color: 'linear-gradient(var(--primary-background-color), var(--secondary-background-color)) no-repeat'
+paper-slider-secondary-color: 'var(--secondary-background-color)'
+paper-slider-disabled-active-color: 'var(--disabled-text-color)'
+paper-slider-disabled-secondary-color: 'var(--disabled-text-color)'
+
+# Google colors
+google-red-500: '#E45E65'
+google-green-500: '#39E949'
+
+# Sidebar
+sidebar-background-color: 'var(--primary-background-color)'
+sidebar-selected-icon-color: 'var(--primary-color)'
+sidebar-selected-text-color: 'var(--primary-text-color)'
+sidebar-text-color: 'var(--primary-text-color)'
+slider-bar-color: 'var(--disabled-text-color)'
+slider-color: 'var(--primary-color)'
+slider-secondary-color: 'var(--light-primary-color)'
+
+# Table
+table-row-background-color: 'var(--homekit-white)'
+table-row-alternative-background-color: 'var(--homekit-white)'
+data-table-background-color: 'var(--homekit-white)'
+
+homekit-card-off: 'rgba(20, 20, 20, 0.4)' #cddef1
+theme-main-color: 'rgba(20, 20, 20, 0.4)'
+conditional-warning-color: 'rgba(249, 44, 44, 0.3)'

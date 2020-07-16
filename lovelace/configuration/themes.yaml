@@ -1,0 +1,14 @@
+HomeKit:
+  !include themes/homekit.yaml
+Beach:
+  !include themes/beach.yaml
+Love:
+  !include themes/love.yaml 
+Summer:  
+  !include themes/summer.yaml
+Night:
+  !include themes/night.yaml
+Clear:
+  !include themes/clear.yaml
+Dark:
+  !include themes/dark.yaml

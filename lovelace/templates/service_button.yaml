@@ -1,0 +1,73 @@
+default:
+  - size: 30%
+  - color: auto
+  - height: 106px
+  - spin: false
+  - show_state: true
+  - show_label: true
+  - show_last_changed: false
+  - tap_action: call-service
+  - hold_action: call-service
+  - aspect_ratio: 1/1
+card:
+  type: custom:button-card
+  name: '[[name]]'
+  lock: '[[lock]]'
+  deep_press: true
+  show_entity_picture: true
+  entity_picture: '[[entity_picture]]'
+  icon: 'mdi:[[icon]]'
+  height: '[[height]]'
+  size: '[[size]]'
+  color: '[[color]]'
+  aspect_ratio: '[[aspect_ratio]]'
+  entity: '[[entity]]'
+  label: '[[name2]]'
+  show_state: '[[show_state]]'
+  show_label: '[[show_label]]'
+  show_last_changed: '[[show_last_changed]]'
+  tap_action:
+    action: call-service
+    service: '[[service_entity]]'
+  hold_action:
+    action: call-service
+    service: '[[service_entity]]'
+  styles:
+    card:
+      - border-radius: var(--border-radius)
+      - --ha-card-background: var(--theme-main-color)
+      - box-shadow: var(--box-shadow-active)
+    lock:
+      - color: var(--lock-color-off)
+    label:
+      - font-size: 14px
+      - font-family: Helvetica
+      - font-weight: bold
+      - padding: 0px 10px
+      - justify-self: start
+      - color: var(--name-color-off)  
+    state:
+      - color: var(--name-color-off)
+      - font-size: 14px
+      - font-family: Helvetica
+      - font-weight: bold
+      - padding: 0px 10px
+      - justify-self: start
+      - text-transform: capitalize
+      - padding-left: 10px
+    grid:
+      - grid-template-columns: 1fr
+      - grid-template-rows: 1fr min-content min-content
+    img_cell:
+      - align-self: start
+      - text-align: start
+      - margin-right: 60px
+    name:
+      - color: var(--name-color-off)
+      - font-size: 14px
+      - font-family: Helvetica
+      - font-weight: bold
+      - justify-self: start
+      - padding-left: 10px
+    icon:
+    - color: var(--accent-color)

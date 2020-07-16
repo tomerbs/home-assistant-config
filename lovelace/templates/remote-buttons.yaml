@@ -1,0 +1,65 @@
+default:
+  - size: 100%
+  - lock: false
+  - color: auto
+  - name: false
+  - height: 30px
+  - spin: false
+  - show_name: false
+  - show_state: false
+  - show_label: false
+  - show_last_changed: false
+  - tap_action: toggle
+  - hold_action: toggle
+  - aspect_ratio: 1.8/1
+card:
+  type: custom:button-card
+  deep_press: true
+  icon: 'mdi:[[icon]]'
+  show_name: false
+  show_entity_picture: false
+  height: '[[height]]'
+  size: '[[size]]'
+  color: '[[color]]'
+  lock: '[[lock]]'
+  aspect_ratio: '[[aspect_ratio]]'
+  entity: '[[entity]]'
+  show_state: '[[show_state]]'
+  show_label: '[[show_label]]'
+  show_last_changed: '[[show_last_changed]]'
+  tap_action:
+    action: '[[tap_action]]'
+    haptic: light
+  hold_action:
+    action: '[[hold_action]]'
+    haptic: heavy    
+  styles:
+    card:
+      - border-radius: var(--border-radius)
+    img_cell:
+      - align-self: center
+      - text-align: center
+  state:
+    - value: "on" 
+      spin: '[[spin]]'  
+      styles:
+        card:
+          - --ha-card-background: var(--homekit-card-on)
+          - box-shadow: var(--box-shadow-active)
+        icon:
+          - color: var(--accent-color)
+    - value: "off"
+      styles:
+        card:
+          - --paper-card-background-color: var(--theme-main-color)
+          - box-shadow: var(--box-shadow-active)
+        icon:
+          - color: var(--disabled-text-color)
+    - value: "unavailable"
+      styles:
+        card:
+          - --paper-card-background-color: var(--theme-main-color)
+          - box-shadow: var(--box-shadow-active)
+          - color: var(--unavailable-color)
+        icon:
+          - color: var(--disabled-text-color)

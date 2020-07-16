@@ -1,0 +1,67 @@
+default:
+  - lock: false
+  - spin: false
+  - show_name: true
+card:
+  type: custom:button-card
+  name: '[[name]]'
+  color_type: icon
+  layout: icon_name
+  deep_press: true
+  show_entity_picture: true
+  entity_picture: '[[entity_picture]]'
+  entity: '[[entity]]'
+  show_name: '[[show_name]]'
+  tap_action:
+    action: none
+  hold_action:
+    action: none
+  double_tap_action:
+    action: call-service
+    service_data:
+      entity_id: '[[entity]]'   
+    service: script.turn_on
+  styles:
+    card:
+      - border-radius: var(--border-radius)
+      - box-shadow: var(--box-shadow-active)
+      - --ha-card-background: var(--theme-main-color)                      
+      - height: 80px
+    name:
+      - color: var(--state-color-off)
+      - font-size: 14px
+      - font-family: Helvetica 
+      - font-weight: bold
+      - padding-right: 110px 
+    img_cell:
+      - text-align: start
+    icon:
+      - margin-left: -20%
+  state:
+    - value: "on" 
+      spin: false 
+      styles:
+        card:
+          - --ha-card-background: var(--homekit-card-on)
+          - box-shadow: var(--box-shadow-active)
+        name:
+          - color: var(--name-color-on)
+        state:
+          - color: var(--state-color-on)
+        lock:
+          - color: var(--lock-color-on)
+        label:
+          - color: var(--label-color-on)
+    - value: "off"
+      styles:
+        card:
+          - --paper-card-background-color: var(--theme-main-color)
+          - box-shadow: var(--box-shadow-active)
+        name:
+          - color: var(--name-color-off)
+        state:
+          - color: var(--state-color-off)
+        lock:
+          - color: var(--lock-color-off)
+        label:
+          - color: var(--label-color-off)
